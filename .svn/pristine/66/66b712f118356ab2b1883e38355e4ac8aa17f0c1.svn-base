@@ -1,0 +1,50 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define DeviceFrame [UIScreen mainScreen].bounds
+#define StatusBarFrame [[UIApplication sharedApplication] statusBarFrame]
+#define NavigationBarFrame self.navigationController.navigationBar.frame
+#define TabBarFrame self.tabBarController.tabBar.frame
+
+#define IP @"http://earea.stcyclub.com"
+#define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
+#define LoginURL [PrexURL stringByAppendingString: @"Member/login?loginname=%@&password=%@"]
+#define ValicodeURL [PrexURL stringByAppendingString: @"Member/valicode?loginname=%@"]
+#define RegisterURL [PrexURL stringByAppendingString: @"Member/regist?loginname=%@&password=%@&Passwd=%@&code=%@"]
+//选择省份
+#define ChooseProvinceURL [PrexURL stringByAppendingString: @"Member/province/"]
+#define ChooseCityURL [PrexURL stringByAppendingString: @"Member/city?province=%@"]
+#define ChooseAreaURL [PrexURL stringByAppendingString: @"Member/area?city=%@"]
+#define ChooseEareaURL [PrexURL stringByAppendingString: @"Member/earea?area=%@"]
+#define ChooseScopeURL [PrexURL stringByAppendingString: @"Member/scope?aid=%@"]
+#define BindScopeURL [PrexURL stringByAppendingString: @"Member/glscope?mid=%@&sid=%@"]
+
+//上传图片
+#define UploadImageURL [PrexURL stringByAppendingString: @"Member/head/"]
+
+//抽奖
+#define LottryURL [PrexURL stringByAppendingString: @"Prize/lucky?mid=%@"]
+
+//抽奖记录
+#define RewardRecordURL [PrexURL stringByAppendingString: @"Prize/mylucky?mid=%@&page=%@"]
+
+//每次一抢的菜
+#define RobModelURL [PrexURL stringByAppendingString: @"Robuy/index?sid=%@"]
+//抢菜action
+#define RobActionURL [PrexURL stringByAppendingString: @"Robuy/porder?mid=%@&sid=%@&gid=%@"]
+#define RobOrderModelURL [PrexURL stringByAppendingString: @"Robuy/myorder?mid=%@&page=%@"]
+

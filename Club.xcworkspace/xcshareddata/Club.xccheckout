@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F285F18C-F611-4857-AC66-C1ACDEB2AD73</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Club</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
+		<string>https://github.com/MartinLi841538513/Club2/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Club.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
+		<string>https://github.com/MartinLi841538513/Club2</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MartinLi841538513/Club2/trunk/Club.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2E377C9A-9259-4680-B986-7B4C5F7E319F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2E377C9A-9259-4680-B986-7B4C5F7E319F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Club3-master</string>
+		</dict>
+	</array>
+</dict>
+</plist>

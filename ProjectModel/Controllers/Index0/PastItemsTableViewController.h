@@ -1,0 +1,20 @@
+//
+//  PastItemsTableViewController.h
+//  Club
+//
+//  Created by dongway on 14-8-9.
+//  Copyright (c) 2014年 martin. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+enum ItemsCategory{
+    
+    PastItemsType
+};
+
+@interface PastItemsTableViewController : UITableViewController
+
+@property(nonatomic,strong)NSArray* datas;
+
+@end
