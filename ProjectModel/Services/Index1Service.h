@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Index1ViewController.h"
 @interface Index1Service : NSObject
 
 -(NSInteger)serialidBytakeLottery;
@@ -20,7 +20,7 @@
 
 -(void)showAwardViewWithDatas:(NSArray *)datas andCurrentView:(UIImageView *)currentView inController:(UIViewController *)viewController;
 
--(void)loadWebViewWithURLString:(NSString *)URLString onViewContrller:(UIViewController *)viewController;
-
--(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController withUserId:(NSString *)userId;
+-(void)loadWebViewWithURLString:(NSString *)URLString andTitle:(NSString *)title onViewContrller:(UIViewController *)viewController;
+-(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController;
+-(void)loadNewluckyInViewController:(Index1ViewController *)viewController;
 @end

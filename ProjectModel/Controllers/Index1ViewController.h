@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MarqueeLabel.h>
 @interface Index1ViewController : UIViewController<UIAlertViewDelegate>
+@property (weak, nonatomic) IBOutlet MarqueeLabel *marqueeLabel;
 
 @end

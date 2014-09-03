@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UIKeyboardViewController.h"
 @protocol RegisterViewControllerDelegate <NSObject>
 
 @optional
@@ -15,8 +15,9 @@
 
 @end
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController<UIKeyboardViewControllerDelegate>
 
 @property(nonatomic,retain)id<RegisterViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
 
 @end

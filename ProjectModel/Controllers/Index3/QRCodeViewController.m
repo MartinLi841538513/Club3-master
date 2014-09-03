@@ -7,6 +7,10 @@
 //
 
 #import "QRCodeViewController.h"
+#import "UserDefaults.h"
+#import "UserModel.h"
+#import <UIImageView+WebCache.h>
+#import "QRCodeGenerator.h"
 
 @interface QRCodeViewController ()
 
@@ -28,8 +32,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我的二维码";
-}
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = userDefaults.userModel;
+    self.name.text = userModel.nickname;
+    self.address.text = userModel.sname;
+    
+    self.QRImgView.image = [QRCodeGenerator qrImageForString:userModel.qrcode imageSize:self.QRImgView.frame.size.width];
+    [self.QRImgView layer].magnificationFilter = kCAFilterNearest;
 
+    [self.userIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,userModel.picture]] placeholderImage:[UIImage imageNamed:@"userIcon.jpg"]];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface QRCodeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *userIcon;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UIImageView *QRImgView;
 
 @end

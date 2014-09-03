@@ -78,7 +78,7 @@
     if (DeviceFrame.size.height==480) {
         tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+80);
     }else{
-        tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+100);
+        tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+140);
     }
 
     totalPrice.frame = CGRectMake(218, tableview.frame.origin.y+tableview.frame.size.height-60, 87, 26);
@@ -177,6 +177,14 @@
     NSLog(@"%@", textView.text);
 }
 
+#pragma UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex==1){
+        NSString *paypassword = [[alertView textFieldAtIndex:0] text];
+        [finalConfirmService submitInViewController:self withPassword:paypassword];
+    }
+}
+
 //选择送货时间
 - (IBAction)selectTimeAction:(id)sender {
     
@@ -184,7 +192,7 @@
 }
 
 - (IBAction)submitAction:(id)sender {
-    
+    [finalConfirmService submitActionInViewController:self];
 }
 - (IBAction)payMethod1:(id)sender {
     [finalConfirmService payMethod1:sender inViewController:self];

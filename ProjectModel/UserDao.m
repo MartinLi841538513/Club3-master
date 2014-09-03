@@ -71,7 +71,11 @@
     model.rotary = [dict valueForKey:@"rotary"];
     model.mobile = [dict valueForKey:@"mobile"];
     model.mid = [dict valueForKey:@"mid"];
-    model.gtype = [dict valueForKey:@"gtype"];
+    if ([[dict valueForKey:@"gtype"] isKindOfClass:[NSString class]]) {
+        model.gtype = nil;
+    }else{
+        model.gtype = [dict valueForKey:@"gtype"];
+    }
     model.prize = [dict valueForKey:@"prize"];
     model.sname = [dict valueForKey:@"sname"];
     model.version = [dict valueForKey:@"version"];

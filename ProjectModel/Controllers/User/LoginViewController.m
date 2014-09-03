@@ -14,6 +14,7 @@
     __weak IBOutlet UITextField *loginname;
     __weak IBOutlet UITextField *password;
     LoginService *loginService;
+    UIKeyboardViewController *keyBoardController;
 }
 @end
 
@@ -32,6 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"登录";
+    keyBoardController = [[UIKeyboardViewController alloc] initWithControllerDelegate:self];
+    [keyBoardController addToolbarToKeyboard];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +52,11 @@
 - (IBAction)registerAction:(id)sender {
     [loginService pushRegisterViewControllerOnViewController:self];
 }
+- (IBAction)forgetPassword:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请带有效证件到小区生活馆找回密码!" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
+}
+
 
 
 #pragma RegisterViewControllerDelegate

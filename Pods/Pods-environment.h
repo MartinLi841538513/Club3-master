@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_JSONModel 0
 #define COCOAPODS_VERSION_PATCH_JSONModel 1
 
+// MarqueeLabel
+#define COCOAPODS_POD_AVAILABLE_MarqueeLabel
+#define COCOAPODS_VERSION_MAJOR_MarqueeLabel 2
+#define COCOAPODS_VERSION_MINOR_MarqueeLabel 0
+#define COCOAPODS_VERSION_PATCH_MarqueeLabel 5
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
@@ -71,4 +77,10 @@
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 1
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 0
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
+
+// libqrencode
+#define COCOAPODS_POD_AVAILABLE_libqrencode
+#define COCOAPODS_VERSION_MAJOR_libqrencode 3
+#define COCOAPODS_VERSION_MINOR_libqrencode 4
+#define COCOAPODS_VERSION_PATCH_libqrencode 2
 

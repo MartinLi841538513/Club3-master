@@ -22,11 +22,17 @@
 #define NavigationBarFrame self.navigationController.navigationBar.frame
 #define TabBarFrame self.tabBarController.tabBar.frame
 
-#define IP @"http://scope.stcyclub.com"
+#define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
+
+#define IP @"http://earea.stcyclub.com"
 #define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
+//登录
 #define LoginURL [PrexURL stringByAppendingString: @"Member/login?loginname=%@&password=%@"]
 #define UserinfosURL [PrexURL stringByAppendingString: @"Member/userinfo?loginname=%@"]
 #define ValicodeURL [PrexURL stringByAppendingString: @"Member/valicode?loginname=%@"]
+//协议
+#define ProtocolURL [PrexURL stringByAppendingString: @"Member/agree"]
+//注册
 #define RegisterURL [PrexURL stringByAppendingString: @"Member/regist?loginname=%@&password=%@&Passwd=%@&code=%@"]
 //选择省份
 #define ChooseProvinceURL [PrexURL stringByAppendingString: @"Member/province/"]
@@ -37,10 +43,15 @@
 #define BindScopeURL [PrexURL stringByAppendingString: @"Member/glscope?mid=%@&sid=%@"]
 //上传图片
 #define UploadImageURL [PrexURL stringByAppendingString: @"Member/head/"]
+
 //抽奖
 #define LottryURL [PrexURL stringByAppendingString: @"Prize/lucky?mid=%@"]
+#define NewluckyURL [PrexURL stringByAppendingString: @"Prize/newlucky"]
 //抽奖记录
 #define RewardRecordURL [PrexURL stringByAppendingString: @"Prize/mylucky?mid=%@&page=%@"]
+//抽奖规则
+#define RewardRuleURL [PrexURL stringByAppendingString: @"Prize/rules"]
+
 //每次一抢的菜
 #define RobModelURL [PrexURL stringByAppendingString: @"Robuy/index?sid=%@"]
 //抢菜记录
@@ -56,4 +67,20 @@
 #define InCartURL [PrexURL stringByAppendingString: @"Trade/incart?mid=%@&gid=%@&num=%@"]
 //购物车所有菜品
 #define ItemsInCarURL [PrexURL stringByAppendingString: @"Trade/carts?mid=%@"]
+//提交订单
+#define SubmitItemsURL [PrexURL stringByAppendingString: @"Trade/buying"]
+
+//我的钱包
+#define AmountURL [PrexURL stringByAppendingString: @"Member/amount?mid=%@&page=%@"]
+//我购买的订单
+#define TradeOrderURL [PrexURL stringByAppendingString: @"Trade/myorder?mid=%@"]
+//我抢到的订单
+#define RobOrderURL [PrexURL stringByAppendingString: @"Robuy/myorder?mid=%@&page=%@"]
+//订单详情
+#define DetailTradeOrderURL [PrexURL stringByAppendingString: @"Trade/orderdetail?orderid=%@"]
+
+//意见反馈
+#define FeedBackURL [PrexURL stringByAppendingString: @"Member/advice?mid=%@&content=%@"]
+
+
 

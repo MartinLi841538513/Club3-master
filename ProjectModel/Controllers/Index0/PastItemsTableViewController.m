@@ -8,7 +8,9 @@
 
 #import "PastItemsTableViewController.h"
 #import "PastRobItemCell.h"
-
+#import "PastItemInfo.h"
+#import <UIImageView+WebCache.h>
+#import "NSString+MT.h"
 @interface PastItemsTableViewController ()
 {
 
@@ -57,20 +59,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
     static NSString *identifier = @"PastRobItemCell";
     UINib *nib = [UINib nibWithNibName:@"PastRobItemCell" bundle:nil];
     [tableView registerNib:nib forCellReuseIdentifier:identifier];
     PastRobItemCell *cell = (PastRobItemCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     // Configure the cell...
-    
+    PastItemInfo *item = [self.datas objectAtIndex:row];
+    NSLog(@"%@",[NSString stringWithFormat:@"%@%@",IP,item.picture]);
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,item.picture]]];
+    cell.name.text = [NSString stringWithFormat:@"%@",item.name];
+    cell.pastPrice.text = [NSString stringWithFormat:@"原价:%@元/%@",item.price,item.unit];
+    NSString *stamp = item.qday;
+    stamp = [stamp timeType3FromStamp:stamp];
+    cell.period.text = [NSString stringWithFormat:@"%@",stamp];
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10.0f;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 110.0f;
+    return 90.0f;
 }
 @end

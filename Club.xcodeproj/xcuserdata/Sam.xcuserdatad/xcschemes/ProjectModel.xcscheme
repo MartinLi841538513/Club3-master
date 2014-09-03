@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "224B350C1995DAB7009523F6"
-               BuildableName = "Club.app"
+               BuildableName = "E&#x5c0f;&#x533a;.app"
                BlueprintName = "Club"
                ReferencedContainer = "container:Club.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "224B350C1995DAB7009523F6"
-            BuildableName = "Club.app"
+            BuildableName = "E&#x5c0f;&#x533a;.app"
             BlueprintName = "Club"
             ReferencedContainer = "container:Club.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "224B350C1995DAB7009523F6"
-            BuildableName = "Club.app"
+            BuildableName = "E&#x5c0f;&#x533a;.app"
             BlueprintName = "Club"
             ReferencedContainer = "container:Club.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "224B350C1995DAB7009523F6"
-            BuildableName = "Club.app"
+            BuildableName = "E&#x5c0f;&#x533a;.app"
             BlueprintName = "Club"
             ReferencedContainer = "container:Club.xcodeproj">
          </BuildableReference>

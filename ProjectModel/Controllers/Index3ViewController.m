@@ -53,7 +53,7 @@
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     
-    titles = [[NSArray alloc] initWithObjects:userModel.nickname,@"我的钱包",@"我的二维码",@"我的订单",@"我的关注",@"我的话题",@"我的活动",@"我的二手置换",@"意见反馈",@"版本更新", nil];
+    titles = [[NSArray alloc] initWithObjects:userModel.nickname,@"我的钱包",@"我的二维码",@"我的订单",@"邻里关系",@"我的二手信息",@"我的活动",@"联系我们",@"意见反馈",@"版本更新", nil];
     subTitles = [[NSArray alloc] initWithObjects:userModel.sname,@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
     [tableview reloadData];
 }
@@ -75,7 +75,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = indexPath.section;
-    NSLog(@"%lu",(unsigned long)row);
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
@@ -96,8 +95,17 @@
         case 0:
             [index3Service presentUserDetailViewControllerOnViewController:self];
             break;
+        case 1:
+            [index3Service presentMyWalletViewControllerOnViewController:self];
+            break;
         case 2:
             [index3Service presentQRCodeViewControllerOnViewController:self];
+            break;
+        case 3:
+            [index3Service presentMyOrderViewControllerOnViewController:self];
+            break;
+        case 7:
+            [index3Service callInViewController:self];
             break;
         case 8:
             [index3Service presentFeedBackViewControllerOnViewController:self];

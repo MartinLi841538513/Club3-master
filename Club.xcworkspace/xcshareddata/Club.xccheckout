@@ -5,43 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F285F18C-F611-4857-AC66-C1ACDEB2AD73</string>
+	<string>A14A47AF-5FF3-4DBC-8F9A-C518CF463BBB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Club</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
-		<string>https://github.com/MartinLi841538513/Club2/trunk</string>
+		<key>AD461765-04E5-4D24-8E32-22072D39544B</key>
+		<string>https://github.com/MartinLi841538513/Club3-master</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Club.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
+		<key>AD461765-04E5-4D24-8E32-22072D39544B</key>
 		<string>..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>2E377C9A-9259-4680-B986-7B4C5F7E319F</key>
-		<string>https://github.com/MartinLi841538513/Club2</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/MartinLi841538513/Club2/trunk/Club.xcworkspace</string>
+	<string>https://github.com/MartinLi841538513/Club3-master</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2E377C9A-9259-4680-B986-7B4C5F7E319F</string>
+	<string>AD461765-04E5-4D24-8E32-22072D39544B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
-			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
-			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2E377C9A-9259-4680-B986-7B4C5F7E319F</string>
+			<string>AD461765-04E5-4D24-8E32-22072D39544B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Club3-master</string>
 		</dict>

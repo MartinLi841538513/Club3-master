@@ -17,6 +17,7 @@
 #import "Mhistory.h"
 #import "JSONModelLib.h"
 #import "Ghistory.h"
+#import "NSString+MT.h"
 
 @implementation RobService
 
@@ -31,7 +32,11 @@
             }else{
                 viewController.robModel = model;
                 [self setItemInfosWithController:viewController];
-                [SVProgressHUD dismiss];
+                if ([model.starttime compareCurrentTimeWith:model.starttime]==NSOrderedDescending) {
+                    [SVProgressHUD showErrorWithStatus:@"未到抢菜时间"];
+                }else{
+                    [SVProgressHUD dismiss];
+                }
             }
         });
     });
@@ -48,23 +53,27 @@
 }
 
 //开抢
--(void)robWithMid:(NSString *)mid andSid:(NSString *)sid andGid:(NSString *)gid{
-    [SVProgressHUD showWithStatus:@"正在努力抢菜中......."];
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        RobDao *robdao = [[RobDao alloc] init];
-        NSNumber *result = [robdao robWithMid:mid andSid:sid andGid:gid];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            if ([result isEqual:[NSNumber numberWithInt:2]]) {
-                [SVProgressHUD showSuccessWithStatus:@"恭喜抢菜成功，去\"我的订单\"看看你的菜"];
-
-            }else if([result isEqual:[NSNumber numberWithInt:822]]){
-                [SVProgressHUD showErrorWithStatus:@"你已完成今日抢菜，请去\"我的订单\"查看您抢的菜"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"很遗憾，没抢到"];
-            }
+-(void)robWithMid:(NSString *)mid andSid:(NSString *)sid andRobModel:(RobModel *)robModel{
+    if ([robModel.starttime compareCurrentTimeWith:robModel.starttime]==NSOrderedDescending) {
+        
+        [SVProgressHUD showErrorWithStatus:@"未到抢菜时间"];
+    }else{
+        [SVProgressHUD showWithStatus:@"正在努力抢菜中......."];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            RobDao *robdao = [[RobDao alloc] init];
+            NSNumber *result = [robdao robWithMid:mid andSid:sid andGid:robModel.gid];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                if ([result isEqual:[NSNumber numberWithInt:2]]) {
+                    [SVProgressHUD showSuccessWithStatus:@"恭喜抢菜成功，去\"我的订单\"看看你的菜"];
+                    
+                }else if([result isEqual:[NSNumber numberWithInt:822]]){
+                    [SVProgressHUD showErrorWithStatus:@"你已完成今日抢菜，请去\"我的订单\"查看您抢的菜"];
+                }else{
+                    [SVProgressHUD showErrorWithStatus:@"很遗憾，没抢到"];
+                }
+            });
         });
-    });
-
+    }
 }
 
 
@@ -81,7 +90,7 @@
             [viewController.tableView reloadData];
         }else{
             NSLog(@"%@",error);
-            [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
         }
     }];
 }
@@ -99,7 +108,7 @@
             [viewController.tableView reloadData];
         }else{
             NSLog(@"%@",error);
-            [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
         }
     }];
 }

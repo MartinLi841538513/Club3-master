@@ -13,6 +13,9 @@
 #import "UserDefaults.h"
 #import "UserModel.h"
 #import "MenuListViewController.h"
+#import "MenuCollectionCell.h"
+
+#define MainGrayColor [UIColor colorWithRed:215.0/255 green:215.0/255 blue:215.0/255 alpha:1]
 @implementation BuyService
 
 //根据以及分类，加载默认二级分类为0的数据
@@ -97,7 +100,7 @@
             menuItemsViewController.view.frame = rect;
             menuItemsViewController.collectionview.frame = rect;
             menuItemsViewController.collectionview.backgroundColor = [UIColor clearColor];
-            menuItemsViewController.view.backgroundColor = [UIColor grayColor];
+            menuItemsViewController.view.backgroundColor = MainGrayColor;
             viewController.tableview.translatesAutoresizingMaskIntoConstraints = YES;
             rect.origin.y = rect.origin.y+rect.size.height;
             rect.size.height = DeviceFrame.size.height-rect.origin.y;
@@ -110,6 +113,20 @@
         [menuItemsViewController.collectionview reloadData];
     }
 
+}
+
+
+-(void)setSelectedColorInCollectionView:(UICollectionView *)collectionView withSelectedRow:(NSInteger)row withDatas:(NSArray *)datas{
+    NSInteger count = datas.count;
+    for (NSInteger i=0; i<count; i++) {
+        NSIndexPath *indpath = [NSIndexPath indexPathForRow:i inSection:0];
+        MenuCollectionCell *cell = (MenuCollectionCell *)[collectionView cellForItemAtIndexPath:indpath];
+        if (i==row) {
+            cell.titleLabel.textColor = MainGreenColor;
+        }else{
+            cell.titleLabel.textColor = [UIColor blackColor];
+        }
+    }
 }
 
 @end

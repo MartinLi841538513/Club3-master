@@ -10,9 +10,10 @@
 #import "RobViewController.h"
 #import "RobedRecordsTableViewController.h"
 #import "PastItemsTableViewController.h"
+
 @interface RobService : NSObject
 -(void)setRobModelWithSid:(NSString *)sid inViewController:(RobViewController *)viewController;
--(void)robWithMid:(NSString *)mid andSid:(NSString *)sid andGid:(NSString *)gid;
+-(void)robWithMid:(NSString *)mid andSid:(NSString *)sid andRobModel:(RobModel *)robModel;
 -(void)loadRecordsInRecordsController:(RobedRecordsTableViewController *)viewController;
 -(void)loadItemsInPastItemsController:(PastItemsTableViewController *)viewController;
 @end

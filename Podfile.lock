@@ -21,6 +21,8 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONModel (1.0.1)
+  - libqrencode (3.4.2)
+  - MarqueeLabel (2.0.5)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
@@ -29,12 +31,16 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.3)
   - JSONModel
+  - libqrencode (~> 3.4.2)
+  - MarqueeLabel (~> 2.0.5)
   - SDWebImage (~> 3.7.1)
   - SVProgressHUD (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
+  libqrencode: ebfece8f6983de7a4a6d33c3a30e2910ecf43b7c
+  MarqueeLabel: 9a9f90f431640b70f010e949ce228391f3af3c61
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 

@@ -75,6 +75,7 @@
     self.goods = userModel.goods;
     
     buyService = [[BuyService alloc] init];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -132,6 +133,9 @@
     MenuCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionviewCellIdentifier forIndexPath:indexPath];
     NSDictionary *gtype = [menuItems objectAtIndex:row];
     cell.titleLabel.text = [gtype objectForKey:@"name"];
+    if (row==0) {
+        cell.titleLabel.textColor = MainGreenColor;
+    }
     return cell;
 }
 
@@ -153,10 +157,13 @@
     }else{
         gtypeId = [gtype objectForKey:@"id"];
     }
-    
+
+    [buyService setSelectedColorInCollectionView:collectionView withSelectedRow:row withDatas:menuItems];
     [buyService goodsBySid:userModel.sid andGtypeid:gtypeId andPage:@"1" inViewController:self];
     NSLog(@"didSelect:%@",gtypeId);
 }
+
+
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
     MenuCollectionCell *cell = (MenuCollectionCell *)[collectionview cellForItemAtIndexPath:indexPath];

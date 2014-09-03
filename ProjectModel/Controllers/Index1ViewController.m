@@ -75,6 +75,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.marqueeLabel.marqueeType = MLContinuous;
+    self.marqueeLabel.scrollDuration = 30.0f;
+    self.marqueeLabel.fadeLength = 10.0f;
+    self.marqueeLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseTap:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.numberOfTouchesRequired = 1;
+    [self.marqueeLabel addGestureRecognizer:tapRecognizer];
+    
     endTimerTotal = 5.0;
     
     array = [[NSArray alloc] initWithObjects:view1,view2,view3,view4,view5,view6,view7,view8,view9,view10,view11,view12,nil];
@@ -95,6 +104,20 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setLabel];
+    [index1Service loadNewluckyInViewController:self];
+}
+
+//暂停/开始滚动
+- (void)pauseTap:(UITapGestureRecognizer *)recognizer {
+    MarqueeLabel *continuousLabel2 = (MarqueeLabel *)recognizer.view;
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        if (!continuousLabel2.isPaused) {
+            [continuousLabel2 pauseLabel];
+        } else {
+            [continuousLabel2 unpauseLabel];
+        }
+    }
 }
 
 -(NSArray *)datasByRotary:(NSArray *)rotary{
@@ -137,14 +160,12 @@
         [userDefaults setUserModel:userModel];
         tipLabel.text = [NSString stringWithFormat:@"您当前还有%ld次机会，已有%ld人参与抽奖",userModel.nums,userModel.peoples];
     }
-
 }
 - (IBAction)checkRules:(id)sender {
-    NSString *urlString = @"http://earea.stcyclub.com/wap.php/Member/agree";
-    [index1Service loadWebViewWithURLString:urlString onViewContrller:self];
+    [index1Service loadWebViewWithURLString:RewardRuleURL andTitle:@"活动规则" onViewContrller:self];
 }
 - (IBAction)rewardRecord:(id)sender {
-    [index1Service presentRewardRecordViewControllerInViewController:self withUserId:userModel.mid];
+    [index1Service presentRewardRecordViewControllerInViewController:self];
 }
 
 //初始化views的效果

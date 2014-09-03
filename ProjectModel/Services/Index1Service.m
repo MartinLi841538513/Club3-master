@@ -13,6 +13,9 @@
 #import "SVProgressHUD.h"
 #import "UserDefaults.h"
 #import "UserModel.h"
+#import "JSONModelLib.h"
+#import "NewluckyData.h"
+#import <MarqueeLabel.h>
 #define HongbaoImg [UIImage imageNamed:@"hongbao.jpg"]
 #define CurImg nil
 
@@ -112,19 +115,42 @@
 }
 
 //加载网络webview（活动规则）
--(void)loadWebViewWithURLString:(NSString *)URLString onViewContrller:(UIViewController *)viewController{
+-(void)loadWebViewWithURLString:(NSString *)URLString andTitle:(NSString *)title onViewContrller:(UIViewController *)viewController{
     WebViewController *webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
     webViewController.hidesBottomBarWhenPushed = YES;
     webViewController.urlString = URLString;
+    webViewController.title = title;
     [viewController.navigationController pushViewController:webViewController animated:YES];
 }
 
 //跳至中奖记录
--(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController withUserId:(NSString *)userId{
+-(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = userDefaults.userModel;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RewardRecordsViewController *recordViewController = [storyboard instantiateViewControllerWithIdentifier:@"RewardRecordsViewController"];
     recordViewController.hidesBottomBarWhenPushed = YES;
-    recordViewController.userId = userId;
+    recordViewController.userId = userModel.mid;
     [viewController.navigationController pushViewController:recordViewController animated:YES];
+}
+
+//加载最新中奖的小伙伴信息
+-(void)loadNewluckyInViewController:(Index1ViewController *)viewController{
+    NewluckyData *cart = [[NewluckyData alloc] initFromURLWithString:NewluckyURL completion:^(NewluckyData *object,JSONModelError *error){
+        NSLog(@"%@",cart);
+        if (object.status == 2) {
+            NSArray *lucky = object.info.lucky;
+            NSInteger count = lucky.count;
+            NSMutableString *content = [[NSMutableString alloc] init];
+            for (NSInteger i=0; i<count; i++) {
+                Newlucky *newlucky = [lucky objectAtIndex:i];
+                [content appendString:[NSString stringWithFormat:@"恭喜会员%@获得%@元红包    ",newlucky.nickname,newlucky.amount_red]];
+            }
+            viewController.marqueeLabel.text = content;
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
+        }
+    }];
+
 }
 @end

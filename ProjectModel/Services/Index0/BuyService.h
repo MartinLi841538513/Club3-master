@@ -14,4 +14,5 @@
 @property(nonatomic,strong)NSDictionary *firstLevelData;
 -(void)goodsBySid:(NSString *)sid andGtypeid:(id)gtypeid andPage:(NSString *)page inViewController:(BuyViewController *)viewController;
 -(void)refreshItemsWithObjects:(NSDictionary *)dicts andSubtypes:(NSArray *)subtypes anIndex:(NSInteger)index inViewController:(BuyViewController *)viewController;
+-(void)setSelectedColorInCollectionView:(UICollectionView *)collectionView withSelectedRow:(NSInteger)row withDatas:(NSArray *)datas;
 @end

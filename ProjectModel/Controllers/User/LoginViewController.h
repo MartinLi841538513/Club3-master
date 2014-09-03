@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RegisterViewController.h"
+#import "UIKeyboardViewController.h"
 
 @protocol LoginViewControllerDelegate <NSObject>
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface LoginViewController : UIViewController<RegisterViewControllerDelegate>
+@interface LoginViewController : UIViewController<RegisterViewControllerDelegate,UIKeyboardViewControllerDelegate>
 
 @property (nonatomic,retain)id<LoginViewControllerDelegate> delegate;
 

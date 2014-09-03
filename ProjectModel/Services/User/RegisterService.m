@@ -11,6 +11,7 @@
 #import "InternetRequest.h"
 #import "MyMD5.h"
 #import "UserDao.h"
+#import "NSString+MT.h"
 
 @implementation RegisterService
 
@@ -39,7 +40,7 @@
 }
 
 -(void)registerWithName:name andCode:codeNumber andPasswd:passwd andPasswordConfirm:passwdConfirm onViewController:(RegisterViewController *)viewController{
-    if ([self validateRegisterName:name andCode:codeNumber andPasswd:passwd andPasswordConfirm:passwdConfirm]) {
+    if ([self validateRegisterName:name andCode:codeNumber andPasswd:passwd andPasswordConfirm:passwdConfirm inViewController:viewController]) {
         
         [SVProgressHUD show];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -63,9 +64,12 @@
 /*
  验证注册信息
  */
--(BOOL)validateRegisterName:(NSString*)name andCode:(NSString *)codeNumber andPasswd:(NSString *)passwd andPasswordConfirm:(NSString *)passwdConfirm{
+-(BOOL)validateRegisterName:(NSString*)name andCode:(NSString *)codeNumber andPasswd:(NSString *)passwd andPasswordConfirm:(NSString *)passwdConfirm inViewController:(RegisterViewController *)viewController{
     if ([name isEqualToString:@""]||name==nil) {
         [SVProgressHUD showErrorWithStatus:@"用户名不能为空"];
+        return NO;
+    }else if(![name isValidateMobile:name]){
+        [SVProgressHUD showErrorWithStatus:@"手机号码不合法"];
         return NO;
     }else if([codeNumber isEqualToString:@""]||codeNumber==nil){
         [SVProgressHUD showErrorWithStatus:@"验证码不能为空"];
@@ -75,6 +79,9 @@
         return NO;
     }else if([passwdConfirm isEqualToString:@""]||passwdConfirm==nil||![passwdConfirm isEqualToString:passwd]){
         [SVProgressHUD showErrorWithStatus:@"两次密码输入不一致"];
+        return NO;
+    }else if(viewController.checkButton.tag==-1){
+        [SVProgressHUD showErrorWithStatus:@"需要同意E小区服务协议"];
         return NO;
     }else{
         return YES;

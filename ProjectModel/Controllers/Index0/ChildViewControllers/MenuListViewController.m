@@ -7,7 +7,7 @@
 //
 
 #import "MenuListViewController.h"
-#import "MenuCollectionCell.h"
+#import "SubMenuCell.h"
 
 @interface MenuListViewController ()
 {
@@ -32,13 +32,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    identifier = @"MenuCollectionCell";
+    identifier = @"SubMenuCell";
     self.collectionview.delegate = self;
     self.collectionview.dataSource = self;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(70, 27);
+    layout.itemSize = CGSizeMake(60, 27);
+    layout.minimumInteritemSpacing = 0;
     self.collectionview.collectionViewLayout = layout;
-    UINib *nib = [UINib nibWithNibName:@"MenuCollectionCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:@"SubMenuCell" bundle:nil];
     [self.collectionview registerNib:nib forCellWithReuseIdentifier:identifier];
     
 }
@@ -57,9 +58,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     NSInteger row = indexPath.row;
-    MenuCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    SubMenuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     NSDictionary *dict = [self.menuItems objectAtIndex:row];
-    cell.titleLabel.text = [dict objectForKey:@"name"];
+    cell.name.text = [dict objectForKey:@"name"];
+    if (row==0) {
+        cell.name.textColor = MainGreenColor;
+    }else{
+        cell.name.textColor = [UIColor blackColor];
+    }
     return cell;
     
 }
@@ -69,6 +75,21 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
     NSLog(@"didSelect:%d",row);
+    [self setSelectedColorInCollectionView:collectionView withSelectedRow:row withDatas:self.menuItems];
     [self.delegate itemSelectedActionWithIndex:row withObjects:self.menuItems];
+}
+
+
+-(void)setSelectedColorInCollectionView:(UICollectionView *)collectionView withSelectedRow:(NSInteger)row withDatas:(NSArray *)datas{
+    NSInteger count = datas.count;
+    for (NSInteger i=0; i<count; i++) {
+        NSIndexPath *indpath = [NSIndexPath indexPathForRow:i inSection:0];
+        SubMenuCell *cell = (SubMenuCell *)[collectionView cellForItemAtIndexPath:indpath];
+        if (i==row) {
+            cell.name.textColor = MainGreenColor;
+        }else{
+            cell.name.textColor = [UIColor blackColor];
+        }
+    }
 }
 @end

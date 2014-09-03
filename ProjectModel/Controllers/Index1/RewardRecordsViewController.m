@@ -79,7 +79,7 @@
 {
     page = 1;
     NSString *pageString = [NSString stringWithFormat:@"%ld",(long)page];
-    NSString *urlString = [NSString stringWithFormat:@"http://earea.stcyclub.com/wap.php/Prize/mylucky?mid=%@&page=%@",self.userId,pageString];
+    NSString *urlString = [NSString stringWithFormat:RewardRecordURL,self.userId,pageString];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSDictionary *result = [InternetRequest loadDataWithUrlString:urlString];
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -105,7 +105,7 @@
 {
     page++;
     NSString *pageString = [NSString stringWithFormat:@"%ld",(long)page];
-    NSString *urlString = [NSString stringWithFormat:@"http://earea.stcyclub.com/wap.php/Prize/mylucky?mid=%@&page=%@",@"38",pageString];
+    NSString *urlString = [NSString stringWithFormat:RewardRecordURL,self.userId,pageString];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSDictionary *result = [InternetRequest loadDataWithUrlString:urlString];
         dispatch_sync(dispatch_get_main_queue(), ^{

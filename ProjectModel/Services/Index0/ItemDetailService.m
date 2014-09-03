@@ -77,7 +77,7 @@
             [itemsViewController.tableview reloadData];
 
         }else{
-            [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
         }
     }];
 }

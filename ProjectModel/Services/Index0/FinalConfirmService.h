@@ -19,5 +19,7 @@
 -(void)payMethod2:(UIButton *)sender inViewController:(FinalConfirmViewController *)viewController;
 -(void)sendMethod1:(UIButton *)sender inViewController:(FinalConfirmViewController *)viewController;
 -(void)sendMethod2:(UIButton *)sender inViewController:(FinalConfirmViewController *)viewController;
+-(void)submitActionInViewController:(FinalConfirmViewController *)viewController;
 
+-(void)submitInViewController:(FinalConfirmViewController *)viewController withPassword:(NSString *)password;
 @end

@@ -8,7 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "RegisterService.h"
-
+#import "Index1Service.h"
 @interface RegisterViewController ()
 {
     __weak IBOutlet UITextField *loginname;
@@ -16,6 +16,7 @@
     __weak IBOutlet UITextField *password;
     __weak IBOutlet UITextField *Passwd;
     RegisterService *registerService;
+    UIKeyboardViewController *keyBoardController;
 }
 @end
 
@@ -33,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"注册";
+    keyBoardController = [[UIKeyboardViewController alloc] initWithControllerDelegate:self];
+    [keyBoardController addToolbarToKeyboard];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,10 +55,21 @@
     NSString *codeNumber = code.text;
     NSString *passwd = password.text;
     NSString *passwdConfirm = Passwd.text;
-    NSLog(@"%@   %@",passwd,passwdConfirm);
     [registerService registerWithName:name andCode:codeNumber andPasswd:passwd andPasswordConfirm:passwdConfirm onViewController:self];
 }
 
+- (IBAction)checkProtocolAction:(id)sender {
+    self.checkButton.tag = -self.checkButton.tag;
+    if (self.checkButton.tag==1) {
+        [self.checkButton setImage:[UIImage imageNamed:@"checked_true.png"] forState:UIControlStateNormal];
+    }else if(self.checkButton.tag == -1){
+        [self.checkButton setImage:[UIImage imageNamed:@"checked_false.png"] forState:UIControlStateNormal];
+    }
+}
+- (IBAction)readProtocolAction:(id)sender {
+    Index1Service *service = [[Index1Service alloc] init];
+    [service loadWebViewWithURLString:ProtocolURL andTitle:@"服务协议" onViewContrller:self];
+}
 
 
 @end

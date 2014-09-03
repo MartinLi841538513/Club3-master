@@ -59,7 +59,7 @@ static CGFloat viewFrameY = 0;
 		keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
 	}
 	else {
-		keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey];
+		keyboardBoundsValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
 	}
 	[keyboardBoundsValue getValue:&keyboardBounds];
 	BOOL isShow = [[notification name] isEqualToString:UIKeyboardWillShowNotification] ? YES : NO;

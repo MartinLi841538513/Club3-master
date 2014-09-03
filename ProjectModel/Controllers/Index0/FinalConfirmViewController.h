@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SelectItemsTableViewController.h"
 #import "UIKeyboardViewController.h"
-@interface FinalConfirmViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,SelectedItemsTableViewControllerDelegate,UIKeyboardViewControllerDelegate>
+@interface FinalConfirmViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,SelectedItemsTableViewControllerDelegate,UIKeyboardViewControllerDelegate,UIAlertViewDelegate>
 
 @property(nonatomic,strong)NSArray *items;
 @property(nonatomic,strong)NSString *totalPriceString;

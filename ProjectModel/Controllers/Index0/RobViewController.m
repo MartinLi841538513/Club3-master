@@ -70,7 +70,7 @@
 
 //抢
 - (IBAction)buyOrRobAction:(id)sender {
-    [robService robWithMid:userModel.mid andSid:userModel.sid andGid:self.robModel.gid];
+    [robService robWithMid:userModel.mid andSid:userModel.sid andRobModel:self.robModel];
 }
 
 

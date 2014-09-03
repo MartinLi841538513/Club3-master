@@ -11,4 +11,7 @@
 @interface NSString (MT)
 -(NSString *)timeType1FromStamp:(NSString *)stamp;
 -(NSString *)timeType2FromStamp:(NSString *)stamp;
+-(NSString *)timeType3FromStamp:(NSString *)stamp;
+-(NSComparisonResult)compareCurrentTimeWith:(NSString *)stamp;
+-(BOOL) isValidateMobile:(NSString *)mobile;
 @end
