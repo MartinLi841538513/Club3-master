@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemPastPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemCount;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *discount;
 @end

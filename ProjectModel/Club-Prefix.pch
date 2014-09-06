@@ -22,6 +22,9 @@
 #define NavigationBarFrame self.navigationController.navigationBar.frame
 #define TabBarFrame self.tabBarController.tabBar.frame
 
+#define ItemHeight 40.0
+
+
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
 #define IP @"http://earea.stcyclub.com"

@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A14A47AF-5FF3-4DBC-8F9A-C518CF463BBB</string>
+	<string>C211AE8B-C2A2-41B5-99F6-D9CAE3922FD5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Club</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>AD461765-04E5-4D24-8E32-22072D39544B</key>
-		<string>https://github.com/MartinLi841538513/Club3-master</string>
+		<key>431D10E9-C755-466F-9017-EE8F61E5FAC2</key>
+		<string>https://github.com/MartinLi841538513/Club3-master.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Club.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AD461765-04E5-4D24-8E32-22072D39544B</key>
+		<key>431D10E9-C755-466F-9017-EE8F61E5FAC2</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/MartinLi841538513/Club3-master</string>
+	<string>https://github.com/MartinLi841538513/Club3-master.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AD461765-04E5-4D24-8E32-22072D39544B</string>
+	<string>431D10E9-C755-466F-9017-EE8F61E5FAC2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AD461765-04E5-4D24-8E32-22072D39544B</string>
+			<string>431D10E9-C755-466F-9017-EE8F61E5FAC2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Club3-master</string>
 		</dict>

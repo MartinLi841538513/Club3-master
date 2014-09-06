@@ -36,7 +36,7 @@
     self.collectionview.delegate = self;
     self.collectionview.dataSource = self;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(60, 27);
+    layout.itemSize = CGSizeMake(60, ItemHeight-2);
     layout.minimumInteritemSpacing = 0;
     self.collectionview.collectionViewLayout = layout;
     UINib *nib = [UINib nibWithNibName:@"SubMenuCell" bundle:nil];

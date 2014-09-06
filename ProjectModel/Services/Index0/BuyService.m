@@ -14,6 +14,8 @@
 #import "UserModel.h"
 #import "MenuListViewController.h"
 #import "MenuCollectionCell.h"
+#import "BuyViewController.h"
+
 
 #define MainGrayColor [UIColor colorWithRed:215.0/255 green:215.0/255 blue:215.0/255 alpha:1]
 @implementation BuyService
@@ -90,13 +92,13 @@
     if (subtypes==nil&&menuItemsViewController!=nil&&[menuItemsViewController isKindOfClass:[MenuListViewController class]]){
         [menuItemsViewController.view removeFromSuperview];
         [menuItemsViewController removeFromParentViewController];
-        viewController.tableview.frame  = CGRectMake(0, 95, DeviceFrame.size.width, DeviceFrame.size.height-95);
+        viewController.tableview.frame  = CGRectMake(0, 62+ItemHeight, DeviceFrame.size.width, DeviceFrame.size.height-95);
     }else if(subtypes!=nil){
         if (menuItemsViewController==nil) {
             menuItemsViewController = [[MenuListViewController alloc] initWithNibName:@"MenuListViewController" bundle:nil];
             [viewController addChildViewController:menuItemsViewController];
             [viewController.view addSubview:menuItemsViewController.view];
-            CGRect rect = CGRectMake(0, 95, DeviceFrame.size.width, 27);
+            CGRect rect = CGRectMake(0, 65+ItemHeight, DeviceFrame.size.width, ItemHeight-4);
             menuItemsViewController.view.frame = rect;
             menuItemsViewController.collectionview.frame = rect;
             menuItemsViewController.collectionview.backgroundColor = [UIColor clearColor];

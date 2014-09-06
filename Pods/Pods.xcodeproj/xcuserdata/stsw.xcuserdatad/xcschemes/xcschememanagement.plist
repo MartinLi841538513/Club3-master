@@ -14,12 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MarqueeLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-libqrencode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8C68D8BEC5F54B8CB2C8BBEA</key>
+		<key>3223A1360EC74AD086E7C5F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B0732761D66497CAD4A3FEB</key>
+		<key>50D3B9588AED407A92E82D0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADE50A655BC94C15850089E4</key>
+		<key>9E8C85D8164D48578F144FD2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBD4479ED75B429EA110B4A1</key>
+		<key>C1880F07B3B04A0CBCC9857B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9903D427D60460BA0D42EB4</key>
+		<key>CA01164580A244728CAFD0BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E34A07DE4DBF426EBBF0D69F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E552DA3665694D84B7EA9AA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

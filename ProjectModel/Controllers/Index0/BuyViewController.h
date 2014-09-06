@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ItemCell.h"
 #import "MenuListViewController.h"
+
 @interface BuyViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,UITableViewCellDelegate,MenuItemsCollectionControllerDelegate>
 @property (nonatomic,strong)NSArray *goods;
 @property (nonatomic,strong)UITableView *tableview;

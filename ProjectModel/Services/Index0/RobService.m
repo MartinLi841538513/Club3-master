@@ -47,8 +47,15 @@
     NSString *startTitle = [NSString stringWithFormat:@"%@开抢",[startTime timeType2FromStamp:startTime]];
     [viewController.startTimeButton setTitle:startTitle forState:UIControlStateNormal];
     viewController.itemImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,viewController.robModel.picture]]]];
+    viewController.date.text = [NSString stringWithFormat:@"%@供抢",viewController.robModel.qiang];
     viewController.itemNameLabel.text = viewController.robModel.name;
     viewController.itemPastPriceLabel.text = [NSString stringWithFormat:@"原价：%@元/%@", viewController.robModel.price,viewController.robModel.unit];
+    NSString *discount = viewController.robModel.discount;
+    if ([discount floatValue] == 0){
+        viewController.discount.text = [NSString stringWithFormat:@"抢购价:免费"];
+    }else{
+        viewController.discount.text = [NSString stringWithFormat:@"抢购价:%@",discount];
+    }
     viewController.itemCount.text = [NSString stringWithFormat:@"抢购总数量：%@%@",viewController.robModel.nums,viewController.robModel.unit];
 }
 

@@ -31,6 +31,10 @@
     [encoder encodeObject:self.sendtime forKey:@"sendtime"];
     [encoder encodeObject:self.picture forKey:@"picture"];
     [encoder encodeObject:[NSString stringWithFormat:@"%ld",(long)self.peoples] forKey:@"peoples"];
+    [encoder encodeObject:self.delivery_limit forKey:@"delivery_limit"];
+    [encoder encodeObject:self.shipping_fee forKey:@"shipping_fee"];
+    [encoder encodeObject:self.delivery_scope forKey:@"delivery_scope"];
+
 }
 
 
@@ -56,6 +60,10 @@
         self.sendtime = [decoder decodeObjectForKey:@"sendtime"];
         self.picture = [decoder decodeObjectForKey:@"picture"];
         self.peoples = [[decoder decodeObjectForKey:@"peoples"] integerValue];
+        self.delivery_limit = [decoder decodeObjectForKey:@"delivery_limit"];
+        self.shipping_fee = [decoder decodeObjectForKey:@"shipping_fee"];
+        self.delivery_scope = [decoder decodeObjectForKey:@"delivery_scope"];
+
     }
     return self;
 }

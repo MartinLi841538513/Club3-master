@@ -17,6 +17,7 @@
 #import "BuyService.h"
 #import "MenuCollectionCell.h"
 #import "ItemDetailService.h"
+
 @interface BuyViewController ()
 {
     UICollectionView *collectionview;
@@ -96,7 +97,7 @@
     collectionviewCellIdentifier = @"MenuCollectionCell";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, 320, 33) collectionViewLayout: layout];
+    collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, 320, ItemHeight) collectionViewLayout: layout];
     [collectionview setShowsHorizontalScrollIndicator:NO];
     [collectionview registerClass:[MenuCollectionCell class] forCellWithReuseIdentifier: @"MenuCollectionCell"];
     

@@ -30,5 +30,8 @@
 @property (copy, nonatomic) NSString *sendtime;
 @property (copy, nonatomic) NSString *picture;
 @property (assign, nonatomic) long peoples;
+@property(nonatomic,strong)NSString *delivery_limit;
+@property(nonatomic,strong)NSString *shipping_fee;
+@property(nonatomic,strong)NSString *delivery_scope;
 
 @end

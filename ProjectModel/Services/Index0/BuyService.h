@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BuyViewController.h"
-
+@class BuyViewController;
 @interface BuyService : NSObject
 
 @property(nonatomic,strong)NSDictionary *firstLevelData;
