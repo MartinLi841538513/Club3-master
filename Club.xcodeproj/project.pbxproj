@@ -1564,6 +1564,7 @@
 				);
 				PRODUCT_NAME = "E小区";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1597,6 +1598,7 @@
 				);
 				PRODUCT_NAME = "E小区";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

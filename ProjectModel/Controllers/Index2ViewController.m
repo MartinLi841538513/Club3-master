@@ -7,7 +7,7 @@
 //
 
 #import "Index2ViewController.h"
-
+#import "SVProgressHUD.h"
 @interface Index2ViewController ()
 {
     
@@ -66,6 +66,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
     NSLog(@"didSelect:%ld",(long)section);
+    [SVProgressHUD showImage:nil status:@"功能尚未开放，敬请期待"];
 }
 
 

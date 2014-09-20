@@ -80,13 +80,6 @@
         viewController.hidesBottomBarWhenPushed = YES;
     }
 }
-//测试post请求，测试完成后要删掉
--(void)testPostRequest{
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"object1",@"key1",@"object2",@"key2",@"object3",@"key4", nil];
-    NSString *urlString = @"http://192.168.1.102:8080/TestRequest/TestRequest";
-//    [InternetRequest postUrlString:urlString withDict:dict];
-    [InternetRequest postUrlString:urlString withDict:dict andImagePath:@"" andImageName:@"userIcon.jpg"];
-}
 
 -(void)imgAction:(id)sender{
     self.tabBarController.selectedIndex = 1;

@@ -114,6 +114,7 @@
             [SVProgressHUD showSuccessWithStatus:@"已是最新版本"];
             break;
         default:
+            [SVProgressHUD showImage:nil status:@"功能尚未开放，敬请期待"];
             break;
     }
 

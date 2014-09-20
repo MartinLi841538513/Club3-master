@@ -62,42 +62,18 @@
 
 -(void)loadView{
     [super loadView];
-    
-    tableview.translatesAutoresizingMaskIntoConstraints=NO;
-    
-    tableHeader.frame = CGRectMake(0, scrollView.frame.origin.y, DeviceFrame.size.width, 35);
-    
+        
     self.automaticallyAdjustsScrollViewInsets = NO;
-    tableview.delegate = self;
-    tableview.dataSource = self;
-    tableview.scrollEnabled = NO;
+
     identifier = @"ItemInfosCell";
     UINib *nib = [UINib nibWithNibName:@"ItemInfosCell" bundle:nil];
     [tableview registerNib:nib forCellReuseIdentifier:identifier];
     tableview.translatesAutoresizingMaskIntoConstraints = YES;
-    if (DeviceFrame.size.height==480) {
-        tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+80);
-    }else{
-        tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+140);
-    }
-
-    totalPrice.frame = CGRectMake(218, tableview.frame.origin.y+tableview.frame.size.height-60, 87, 26);
-    tips.frame = CGRectMake(3, tableview.frame.origin.y+tableview.frame.size.height-30, DeviceFrame.size.width, 40);
-    sendMethodTitle.frame = CGRectMake(0, tips.frame.origin.y+tips.frame.size.height, DeviceFrame.size.width, 31);
-    deliverRadio1.frame = CGRectMake(5, sendMethodTitle.frame.origin.y+sendMethodTitle.frame.size.height+5, 25, 25);
-    deliverRadioTitle1.frame = CGRectMake(deliverRadio1.frame.origin.x+deliverRadio1.frame.size.width +10, deliverRadio1.frame.origin.y +2, 70, 25);
-    storeInfo.frame = CGRectMake(deliverRadioTitle1.frame.origin.x, deliverRadioTitle1.frame.origin.y + deliverRadioTitle1.frame.size.height + 5, 274, 33);
-    deliverRadio2.frame = CGRectMake(deliverRadio1.frame.origin.x, storeInfo.frame.origin.y + storeInfo.frame.size.height +2, 25, 25);
-    deliverRadioTitle2.frame = CGRectMake(deliverRadioTitle1.frame.origin.x, deliverRadio2.frame.origin.y +2, 70, 25);
-    userInfo.frame = CGRectMake(deliverRadioTitle2.frame.origin.x +10, deliverRadioTitle2.frame.origin.y + deliverRadioTitle2.frame.size.height + 5, 253, 103);
-    
-    scrollView.scrollEnabled = YES;
-    scrollView.frame = CGRectMake(0, StatusBarFrame.size.height+NavigationBarFrame.size.height, DeviceFrame.size.width, DeviceFrame.size.height-StatusBarFrame.size.height-NavigationBarFrame.size.height-50);
-    
-    seperateLine.frame = CGRectMake(0, scrollView.frame.origin.y+scrollView.frame.size.height+2, DeviceFrame.size.width, 1);
 
     keyBoardController = [[UIKeyboardViewController alloc] initWithControllerDelegate:self];
     [keyBoardController addToolbarToKeyboard];
+    NSLog(@"%@",NSStringFromCGRect(tableview.frame));
+
 }
 
 - (void)viewDidLoad
@@ -105,6 +81,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"订单确认";
+    
+    
     timeArray = [[NSArray alloc]initWithObjects:@"8:00-10:00",@"10:00-12:00",@"12:00-14:00",@"15:00-18:00", nil];
     totalPrice.text = [NSString stringWithFormat:@"总额:￥%@",self.totalPriceString];
     bottomTotalPrice.text = [NSString stringWithFormat:@"总额:￥%@",self.totalPriceString];
@@ -115,16 +93,21 @@
     UserModel *userModel = [userDefaults userModel];
     self.userPhone.text = userModel.mobile;
     self.sendAddress.text = userModel.address;
+
+    NSLog(@"%@",NSStringFromCGRect(tableview.frame));
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+//    tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+50);
 
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    scrollView.contentSize = CGSizeMake(DeviceFrame.size.width, userInfo.frame.origin.y+userInfo.frame.size.height+80);
+    scrollView.contentSize = CGSizeMake(DeviceFrame.size.width, userInfo.frame.origin.y+userInfo.frame.size.height+140);
+    NSLog(@"%@",NSStringFromCGSize(scrollView.contentSize));
 
 }
 - (void)didReceiveMemoryWarning
