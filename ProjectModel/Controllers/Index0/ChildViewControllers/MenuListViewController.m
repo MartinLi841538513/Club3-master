@@ -74,7 +74,7 @@
 #pragma UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
-    NSLog(@"didSelect:%d",row);
+    NSLog(@"didSelect:%ld",(long)row);
     [self setSelectedColorInCollectionView:collectionView withSelectedRow:row withDatas:self.menuItems];
     [self.delegate itemSelectedActionWithIndex:row withObjects:self.menuItems];
 }

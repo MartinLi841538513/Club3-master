@@ -35,7 +35,6 @@
     __weak IBOutlet UILabel *storeInfo;
     __weak IBOutlet UIView *userInfo;
     
-    __weak IBOutlet UIView *seperateLine;
     
     
     NSString *identifier;
@@ -48,6 +47,8 @@
     UIKeyboardViewController *keyBoardController;
 }
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableviewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *view1Height;
 
 @end
 
@@ -68,8 +69,8 @@
     identifier = @"ItemInfosCell";
     UINib *nib = [UINib nibWithNibName:@"ItemInfosCell" bundle:nil];
     [tableview registerNib:nib forCellReuseIdentifier:identifier];
-    tableview.translatesAutoresizingMaskIntoConstraints = YES;
-
+    self.tableviewHeight.constant = (self.items.count+1)*34;
+    self.view1Height.constant = self.tableviewHeight.constant+106;
     keyBoardController = [[UIKeyboardViewController alloc] initWithControllerDelegate:self];
     [keyBoardController addToolbarToKeyboard];
     NSLog(@"%@",NSStringFromCGRect(tableview.frame));

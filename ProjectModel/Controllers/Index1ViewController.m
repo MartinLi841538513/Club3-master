@@ -147,6 +147,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"activityRule"]) {
+        UIViewController *viewController = segue.destinationViewController;
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+}
+
 //抽奖
 - (IBAction)drawLotteryAction:(id)sender {
     NSInteger num = userModel.nums;
@@ -162,7 +169,7 @@
     }
 }
 - (IBAction)checkRules:(id)sender {
-    [index1Service loadWebViewWithURLString:RewardRuleURL andTitle:@"活动规则" onViewContrller:self];
+//    [index1Service loadWebViewWithURLString:RewardRuleURL andTitle:@"活动规则" onViewContrller:self];
 }
 - (IBAction)rewardRecord:(id)sender {
     [index1Service presentRewardRecordViewControllerInViewController:self];

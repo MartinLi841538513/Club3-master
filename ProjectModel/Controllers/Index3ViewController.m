@@ -43,7 +43,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.automaticallyAdjustsScrollViewInsets = NO;
-    images = [[NSArray alloc] initWithObjects:@"userIcon.jpg",@"account",@"qr_code",@"order",@"attention",@"topic",@"activity",@"jiaoyi",@"return_suggest",@"ic_update", nil];
+    images = [[NSArray alloc] initWithObjects:@"userIcon.jpg",@"account",@"qr_code",@"order",@"jiaoyi",@"return_suggest",@"ic_update", nil];
     
    
 }
@@ -53,8 +53,8 @@
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     
-    titles = [[NSArray alloc] initWithObjects:userModel.nickname,@"我的钱包",@"我的二维码",@"我的订单",@"邻里关系",@"我的二手信息",@"我的活动",@"联系我们",@"意见反馈",@"版本更新", nil];
-    subTitles = [[NSArray alloc] initWithObjects:userModel.sname,@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
+    titles = [[NSArray alloc] initWithObjects:userModel.nickname,@"我的钱包",@"我的二维码",@"我的订单",@"联系我们",@"意见反馈",@"版本更新", nil];
+    subTitles = [[NSArray alloc] initWithObjects:userModel.sname,@"",@"",@"",@"",@"",@"", nil];
     [tableview reloadData];
 }
 
@@ -66,7 +66,7 @@
 
 #pragma UITableviewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return titles.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -104,13 +104,13 @@
         case 3:
             [index3Service presentMyOrderViewControllerOnViewController:self];
             break;
-        case 7:
+        case 4:
             [index3Service callInViewController:self];
             break;
-        case 8:
+        case 5:
             [index3Service presentFeedBackViewControllerOnViewController:self];
             break;
-        case 9:
+        case 6:
             [SVProgressHUD showSuccessWithStatus:@"已是最新版本"];
             break;
         default:
