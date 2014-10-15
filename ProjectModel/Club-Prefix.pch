@@ -11,8 +11,8 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #endif
 
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
@@ -27,7 +27,9 @@
 
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
-#define IP @"http://earea.stcyclub.com"
+//#define IP @"http://earea.stcyclub.com"
+#define IP @"http://scope.stcyclub.com"
+
 #define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
 //登录
 #define LoginURL [PrexURL stringByAppendingString: @"Member/login?loginname=%@&password=%@"]
@@ -84,6 +86,11 @@
 
 //意见反馈
 #define FeedBackURL [PrexURL stringByAppendingString: @"Member/advice?mid=%@&content=%@"]
+
+//团购
+#define GroupsURL [PrexURL stringByAppendingString: @"Groups/goodslist?mid=%@&type=%@&page=%@"]
+//团购报名
+#define GroupSignUp [PrexURL stringByAppendingString: @"Groups/signup?mid=%@&gid=%@&nums=%@&paypassword=%@"]
 
 
 

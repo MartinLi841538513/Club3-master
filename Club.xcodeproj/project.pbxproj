@@ -166,6 +166,18 @@
 		332F551919B1BF8600333C4A /* Mhistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551819B1BF8600333C4A /* Mhistory.m */; };
 		332F551D19B1CD3C00333C4A /* Ghistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551C19B1CD3C00333C4A /* Ghistory.m */; };
 		332F552019B1CE2C00333C4A /* PastItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551F19B1CE2C00333C4A /* PastItemInfo.m */; };
+		335D22C919EE42FD00EB99B5 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22C819EE42FD00EB99B5 /* Groups.m */; };
+		335D22CE19EE434000EB99B5 /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CA19EE434000EB99B5 /* buy.png */; };
+		335D22CF19EE434000EB99B5 /* miao.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CB19EE434000EB99B5 /* miao.png */; };
+		335D22D019EE434000EB99B5 /* rob.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CC19EE434000EB99B5 /* rob.png */; };
+		335D22D119EE434000EB99B5 /* team.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CD19EE434000EB99B5 /* team.png */; };
+		335D22D419EE466100EB99B5 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22D319EE466100EB99B5 /* GroupsViewController.m */; };
+		335D22D719EE46B300EB99B5 /* CurrentGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22D619EE46B300EB99B5 /* CurrentGroupCell.m */; };
+		335D22DA19EE513400EB99B5 /* GroupService.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22D919EE513400EB99B5 /* GroupService.m */; };
+		335D22DC19EE594200EB99B5 /* now_kill_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22DB19EE594200EB99B5 /* now_kill_bg.png */; };
+		335D22DE19EE5C5900EB99B5 /* all_man_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22DD19EE5C5900EB99B5 /* all_man_img.png */; };
+		335D22E019EE5C6100EB99B5 /* naozhong_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22DF19EE5C6100EB99B5 /* naozhong_img.png */; };
+		335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22E219EE5E8F00EB99B5 /* GroupDetailViewController.m */; };
 		33E5644119A889F8002E5D98 /* MenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E5643F19A889F8002E5D98 /* MenuListViewController.m */; };
 		33E5644219A889F8002E5D98 /* MenuListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E5644019A889F8002E5D98 /* MenuListViewController.xib */; };
 		33FFA03319BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */; };
@@ -447,6 +459,23 @@
 		332F551C19B1CD3C00333C4A /* Ghistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ghistory.m; sourceTree = "<group>"; };
 		332F551E19B1CE2C00333C4A /* PastItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastItemInfo.h; sourceTree = "<group>"; };
 		332F551F19B1CE2C00333C4A /* PastItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastItemInfo.m; sourceTree = "<group>"; };
+		335D22C719EE42FD00EB99B5 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
+		335D22C819EE42FD00EB99B5 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
+		335D22CA19EE434000EB99B5 /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
+		335D22CB19EE434000EB99B5 /* miao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = miao.png; sourceTree = "<group>"; };
+		335D22CC19EE434000EB99B5 /* rob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rob.png; sourceTree = "<group>"; };
+		335D22CD19EE434000EB99B5 /* team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = team.png; sourceTree = "<group>"; };
+		335D22D219EE466100EB99B5 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
+		335D22D319EE466100EB99B5 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		335D22D519EE46B300EB99B5 /* CurrentGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentGroupCell.h; sourceTree = "<group>"; };
+		335D22D619EE46B300EB99B5 /* CurrentGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentGroupCell.m; sourceTree = "<group>"; };
+		335D22D819EE513400EB99B5 /* GroupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupService.h; sourceTree = "<group>"; };
+		335D22D919EE513400EB99B5 /* GroupService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupService.m; sourceTree = "<group>"; };
+		335D22DB19EE594200EB99B5 /* now_kill_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = now_kill_bg.png; sourceTree = "<group>"; };
+		335D22DD19EE5C5900EB99B5 /* all_man_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_man_img.png; sourceTree = "<group>"; };
+		335D22DF19EE5C6100EB99B5 /* naozhong_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naozhong_img.png; sourceTree = "<group>"; };
+		335D22E119EE5E8F00EB99B5 /* GroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
+		335D22E219EE5E8F00EB99B5 /* GroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
 		33E5643E19A889F8002E5D98 /* MenuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewController.h; sourceTree = "<group>"; };
 		33E5643F19A889F8002E5D98 /* MenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewController.m; sourceTree = "<group>"; };
 		33E5644019A889F8002E5D98 /* MenuListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuListViewController.xib; sourceTree = "<group>"; };
@@ -763,6 +792,10 @@
 				2267B4301999E2F600FA9FED /* PurchaseCarItemsViewController.m */,
 				2267B49F199A156600FA9FED /* FinalConfirmViewController.h */,
 				2267B4A0199A156600FA9FED /* FinalConfirmViewController.m */,
+				335D22D219EE466100EB99B5 /* GroupsViewController.h */,
+				335D22D319EE466100EB99B5 /* GroupsViewController.m */,
+				335D22E119EE5E8F00EB99B5 /* GroupDetailViewController.h */,
+				335D22E219EE5E8F00EB99B5 /* GroupDetailViewController.m */,
 			);
 			name = Index0;
 			path = Controllers/Index0;
@@ -779,6 +812,13 @@
 		22557A01199645A3001B5FCC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				335D22DF19EE5C6100EB99B5 /* naozhong_img.png */,
+				335D22DD19EE5C5900EB99B5 /* all_man_img.png */,
+				335D22DB19EE594200EB99B5 /* now_kill_bg.png */,
+				335D22CA19EE434000EB99B5 /* buy.png */,
+				335D22CB19EE434000EB99B5 /* miao.png */,
+				335D22CC19EE434000EB99B5 /* rob.png */,
+				335D22CD19EE434000EB99B5 /* team.png */,
 				22F96DA219B57B7900A783B3 /* mycard_front.png */,
 				22156C0119B44BA400D0EEB6 /* logo.png */,
 				330FA5DF19B1965F0026DFB2 /* appIcon114.png */,
@@ -838,6 +878,8 @@
 				2267B490199A14D400FA9FED /* RobedRecordCell.h */,
 				2267B491199A14D400FA9FED /* RobedRecordCell.m */,
 				2267B492199A14D400FA9FED /* RobedRecordCell.xib */,
+				335D22D519EE46B300EB99B5 /* CurrentGroupCell.h */,
+				335D22D619EE46B300EB99B5 /* CurrentGroupCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -886,6 +928,8 @@
 				227240AC19B352F9005210B2 /* RobedRecordsService.m */,
 				227240AD19B352F9005210B2 /* RobService.h */,
 				227240AE19B352F9005210B2 /* RobService.m */,
+				335D22D819EE513400EB99B5 /* GroupService.h */,
+				335D22D919EE513400EB99B5 /* GroupService.m */,
 			);
 			path = Index0;
 			sourceTree = "<group>";
@@ -942,6 +986,7 @@
 		22B4981719AF54A400901ED6 /* JsonModel */ = {
 			isa = PBXGroup;
 			children = (
+				335D22C619EE42FD00EB99B5 /* Groups */,
 				221DA24319B5ADF800C9F747 /* Reward */,
 				22156BFD19B4431C00D0EEB6 /* OrderDetail */,
 				22156BF319B41B4000D0EEB6 /* TradeOrder */,
@@ -1113,6 +1158,15 @@
 			path = ghistory;
 			sourceTree = "<group>";
 		};
+		335D22C619EE42FD00EB99B5 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				335D22C719EE42FD00EB99B5 /* Groups.h */,
+				335D22C819EE42FD00EB99B5 /* Groups.m */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		33FFA03019BAD7EA00EFFC8D /* UMessage_Sdk_1.1.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1206,16 +1260,20 @@
 				2267B49C199A14D400FA9FED /* PurchaseCarItemCell.xib in Resources */,
 				22F1E54819A0B69100E66885 /* DatasTableViewController.xib in Resources */,
 				2298028B19A2EC1500E353EF /* MJRefresh.bundle in Resources */,
+				335D22D019EE434000EB99B5 /* rob.png in Resources */,
 				22CFAE981999B88300BBD914 /* neighbour.png in Resources */,
 				2267B49A199A14D400FA9FED /* PastRobItemCell.xib in Resources */,
 				22251500199D9A3D003DCAC1 /* WebViewController.xib in Resources */,
 				330FA5DE19B196370026DFB2 /* appIcon57.png in Resources */,
 				222514F7199D914E003DCAC1 /* main_me@2x.png in Resources */,
+				335D22DC19EE594200EB99B5 /* now_kill_bg.png in Resources */,
 				2210E5AF19AF354B00E4F1FB /* shopping_cart1@2x.png in Resources */,
 				22CFAE801999A89600BBD914 /* userIcon.jpg in Resources */,
+				335D22CE19EE434000EB99B5 /* buy.png in Resources */,
 				225E3DEA199B3F8B00BDCAE9 /* SelectItemsTableViewController.xib in Resources */,
 				330FA5E019B1965F0026DFB2 /* appIcon114.png in Resources */,
 				222514F5199D914E003DCAC1 /* main_lotteryDraw@2x.png in Resources */,
+				335D22DE19EE5C5900EB99B5 /* all_man_img.png in Resources */,
 				22557A05199645A3001B5FCC /* carota2.jpg in Resources */,
 				33E5644219A889F8002E5D98 /* MenuListViewController.xib in Resources */,
 				2267B498199A14D400FA9FED /* MenuCollectionCell.xib in Resources */,
@@ -1230,6 +1288,7 @@
 				22CFAE921999AC1200BBD914 /* order.png in Resources */,
 				222514F6199D914E003DCAC1 /* main_lotteryDraw_light@2x.png in Resources */,
 				222514F1199D914E003DCAC1 /* home_page_light@2x.png in Resources */,
+				335D22CF19EE434000EB99B5 /* miao.png in Resources */,
 				2267B49E199A14D400FA9FED /* RobedRecordCell.xib in Resources */,
 				22CFAE941999B82100BBD914 /* second_hand_info.png in Resources */,
 				2267B494199A14D400FA9FED /* ItemCell.xib in Resources */,
@@ -1247,10 +1306,12 @@
 				224B35241995DAB7009523F6 /* Main.storyboard in Resources */,
 				22212AE4199CB732006A0473 /* hongbao.jpg in Resources */,
 				22CFAE841999ABA500BBD914 /* activity.png in Resources */,
+				335D22E019EE5C6100EB99B5 /* naozhong_img.png in Resources */,
 				22BAA57A19979C4400B1948A /* User.storyboard in Resources */,
 				22CFAE881999ABC500BBD914 /* ic_update.png in Resources */,
 				222514F2199D914E003DCAC1 /* home_page@2x.png in Resources */,
 				22CFAE961999B86400BBD914 /* living_circle.png in Resources */,
+				335D22D119EE434000EB99B5 /* team.png in Resources */,
 				22CFAE8A1999ABE200BBD914 /* qr_code.png in Resources */,
 				22CFAE8C1999ABEB00BBD914 /* return_suggest.png in Resources */,
 				222514F4199D914E003DCAC1 /* main_community_light@2x.png in Resources */,
@@ -1305,6 +1366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335D22D419EE466100EB99B5 /* GroupsViewController.m in Sources */,
 				227240CA19B352F9005210B2 /* Index1Service.m in Sources */,
 				227240C319B352F9005210B2 /* BuyService.m in Sources */,
 				2207A70119B2E66C0067B00C /* MyWalletViewController.m in Sources */,
@@ -1317,6 +1379,7 @@
 				22156BFC19B4273200D0EEB6 /* TradeOrderDetailCell.m in Sources */,
 				227240A019B350C0005210B2 /* RobOrderData.m in Sources */,
 				22082D0319A4962C0088D8C3 /* RobOrderDao.m in Sources */,
+				335D22D719EE46B300EB99B5 /* CurrentGroupCell.m in Sources */,
 				221DA24619B5AE1100C9F747 /* NewluckyData.m in Sources */,
 				33E5644119A889F8002E5D98 /* MenuListViewController.m in Sources */,
 				330FA5DC19B17F070026DFB2 /* UIKeyboardViewController.m in Sources */,
@@ -1338,6 +1401,7 @@
 				22BAA57D19979E5100B1948A /* RegisterViewController.m in Sources */,
 				22082CFD19A480F70088D8C3 /* NSString+MT.m in Sources */,
 				22156BF919B4269100D0EEB6 /* TradeOrderDetailViewController.m in Sources */,
+				335D22DA19EE513400EB99B5 /* GroupService.m in Sources */,
 				227240C719B352F9005210B2 /* RobedRecordsService.m in Sources */,
 				227240C619B352F9005210B2 /* PurchaseCarItemsService.m in Sources */,
 				227240CC19B352F9005210B2 /* Index3Service.m in Sources */,
@@ -1360,6 +1424,7 @@
 				225E3DE9199B3F8B00BDCAE9 /* SelectItemsTableViewController.m in Sources */,
 				2267B4311999E2F600FA9FED /* PurchaseCarItemsViewController.m in Sources */,
 				2213C71119A1DF3D001A9CF2 /* PrizeDao.m in Sources */,
+				335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */,
 				2298029119A2EC1500E353EF /* UIScrollView+MJRefresh.m in Sources */,
 				2267B49D199A14D400FA9FED /* RobedRecordCell.m in Sources */,
 				224B35541995DD78009523F6 /* Index2ViewController.m in Sources */,
@@ -1399,6 +1464,7 @@
 				227240C819B352F9005210B2 /* RobService.m in Sources */,
 				2267B497199A14D400FA9FED /* MenuCollectionCell.m in Sources */,
 				22F1E54719A0B69100E66885 /* DatasTableViewController.m in Sources */,
+				335D22C919EE42FD00EB99B5 /* Groups.m in Sources */,
 				227240CE19B352F9005210B2 /* ChooseAreaService.m in Sources */,
 				2267B49B199A14D400FA9FED /* PurchaseCarItemCell.m in Sources */,
 				224B35471995DD11009523F6 /* Index0ViewController.m in Sources */,

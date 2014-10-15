@@ -12,20 +12,29 @@
 	<dict>
 		<key>475A498B-33F6-49DD-A975-144B44D14DE6</key>
 		<string>https://github.com/MartinLi841538513/Club3-master</string>
+		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
+		<string>https://github.com/MartinLi841538513/Club2/trunk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Club.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>475A498B-33F6-49DD-A975-144B44D14DE6</key>
+		<string>../../Club3-master</string>
+		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
 		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
+		<string>https://github.com/MartinLi841538513/Club2</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MartinLi841538513/Club3-master</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>475A498B-33F6-49DD-A975-144B44D14DE6</string>
+	<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +44,22 @@
 			<string>475A498B-33F6-49DD-A975-144B44D14DE6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Club3-master</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Club4</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Club4</string>
 		</dict>
 	</array>
 </dict>

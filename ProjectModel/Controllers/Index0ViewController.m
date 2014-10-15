@@ -48,8 +48,8 @@
         
     }
     
-    robButton.translatesAutoresizingMaskIntoConstraints = YES;
-    buyButton.translatesAutoresizingMaskIntoConstraints = YES;
+//    robButton.translatesAutoresizingMaskIntoConstraints = YES;
+//    buyButton.translatesAutoresizingMaskIntoConstraints = YES;
 }
 
 - (void)viewDidLoad
@@ -61,11 +61,11 @@
 
     
     float space = 5.0;
-    float height = (DeviceFrame.size.height-imgView.frame.origin.y-imgView.frame.size.height-TabBarFrame.size.height-space*3-2)/2.0;
-    robButton.frame = CGRectMake(0, 231, 300, 100);
-    robButton.frame = CGRectMake(0, imgView.frame.origin.y+imgView.frame.size.height+space, DeviceFrame.size.width, height);
-    buyButton.frame = CGRectMake(0, robButton.frame.origin.y+robButton.frame.size.height+space, DeviceFrame.size.width, height);
-    
+//    float height = (DeviceFrame.size.height-imgView.frame.origin.y-imgView.frame.size.height-TabBarFrame.size.height-space*3-2)/2.0;
+//    robButton.frame = CGRectMake(0, 231, 300, 100);
+//    robButton.frame = CGRectMake(0, imgView.frame.origin.y+imgView.frame.size.height+space, DeviceFrame.size.width, height);
+//    buyButton.frame = CGRectMake(0, robButton.frame.origin.y+robButton.frame.size.height+space, DeviceFrame.size.width, height);
+//    
     index0Service = [[Index0Service alloc] init];
     [index0Service loadUserDefaultsInViewController:self];
     
@@ -77,6 +77,9 @@
         viewController.hidesBottomBarWhenPushed = YES;
     }else if(sender==buyButton) {
         BuyViewController *viewController = segue.destinationViewController;
+        viewController.hidesBottomBarWhenPushed = YES;
+    }else if([segue.identifier isEqualToString:@"GroupAction"]){
+        UIViewController *viewController = segue.destinationViewController;
         viewController.hidesBottomBarWhenPushed = YES;
     }
 }
