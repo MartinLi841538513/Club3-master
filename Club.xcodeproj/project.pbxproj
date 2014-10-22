@@ -180,6 +180,18 @@
 		335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22E219EE5E8F00EB99B5 /* GroupDetailViewController.m */; };
 		33E5644119A889F8002E5D98 /* MenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E5643F19A889F8002E5D98 /* MenuListViewController.m */; };
 		33E5644219A889F8002E5D98 /* MenuListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E5644019A889F8002E5D98 /* MenuListViewController.xib */; };
+		33E7CF6419F7727C00D49EA6 /* MyGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CF6319F7727C00D49EA6 /* MyGroupCell.m */; };
+		33E7CF6719F776C700D49EA6 /* MyGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CF6619F776C700D49EA6 /* MyGroups.m */; };
+		33E7CF9B19F7911600D49EA6 /* finish_kill_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E7CF9A19F7911600D49EA6 /* finish_kill_bg.png */; };
+		33E7CF9D19F7921E00D49EA6 /* future_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E7CF9C19F7921E00D49EA6 /* future_clock.png */; };
+		33E7CF9F19F7933000D49EA6 /* now_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E7CF9E19F7933000D49EA6 /* now_clock.png */; };
+		33E7CFAE19F79AE200D49EA6 /* killsmall2.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E7CFAD19F79AE200D49EA6 /* killsmall2.png */; };
+		33E7CFB119F79C4C00D49EA6 /* KillGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFB019F79C4C00D49EA6 /* KillGoodCell.m */; };
+		33E7CFB419F79D1900D49EA6 /* KillListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFB319F79D1900D49EA6 /* KillListViewController.m */; };
+		33E7CFB819F79E4400D49EA6 /* Kills.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFB719F79E4400D49EA6 /* Kills.m */; };
+		33E7CFBB19F79F6000D49EA6 /* KillService.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFBA19F79F6000D49EA6 /* KillService.m */; };
+		33E7CFBE19F7A73D00D49EA6 /* KillDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFBD19F7A73D00D49EA6 /* KillDetailViewController.m */; };
+		33E7CFC119F7A79A00D49EA6 /* KillDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */; };
 		33FFA03319BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */; };
 		33FFA03419BADB0E00EFFC8D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA02219BAB60200EFFC8D /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -479,6 +491,26 @@
 		33E5643E19A889F8002E5D98 /* MenuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewController.h; sourceTree = "<group>"; };
 		33E5643F19A889F8002E5D98 /* MenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewController.m; sourceTree = "<group>"; };
 		33E5644019A889F8002E5D98 /* MenuListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuListViewController.xib; sourceTree = "<group>"; };
+		33E7CF6219F7727C00D49EA6 /* MyGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupCell.h; sourceTree = "<group>"; };
+		33E7CF6319F7727C00D49EA6 /* MyGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupCell.m; sourceTree = "<group>"; };
+		33E7CF6519F776C700D49EA6 /* MyGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroups.h; sourceTree = "<group>"; };
+		33E7CF6619F776C700D49EA6 /* MyGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroups.m; sourceTree = "<group>"; };
+		33E7CF9A19F7911600D49EA6 /* finish_kill_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish_kill_bg.png; sourceTree = "<group>"; };
+		33E7CF9C19F7921E00D49EA6 /* future_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = future_clock.png; sourceTree = "<group>"; };
+		33E7CF9E19F7933000D49EA6 /* now_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = now_clock.png; sourceTree = "<group>"; };
+		33E7CFAD19F79AE200D49EA6 /* killsmall2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = killsmall2.png; sourceTree = "<group>"; };
+		33E7CFAF19F79C4C00D49EA6 /* KillGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillGoodCell.h; sourceTree = "<group>"; };
+		33E7CFB019F79C4C00D49EA6 /* KillGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillGoodCell.m; sourceTree = "<group>"; };
+		33E7CFB219F79D1900D49EA6 /* KillListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillListViewController.h; sourceTree = "<group>"; };
+		33E7CFB319F79D1900D49EA6 /* KillListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillListViewController.m; sourceTree = "<group>"; };
+		33E7CFB619F79E4400D49EA6 /* Kills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kills.h; sourceTree = "<group>"; };
+		33E7CFB719F79E4400D49EA6 /* Kills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kills.m; sourceTree = "<group>"; };
+		33E7CFB919F79F6000D49EA6 /* KillService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillService.h; sourceTree = "<group>"; };
+		33E7CFBA19F79F6000D49EA6 /* KillService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillService.m; sourceTree = "<group>"; };
+		33E7CFBC19F7A73D00D49EA6 /* KillDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillDetailViewController.h; sourceTree = "<group>"; };
+		33E7CFBD19F7A73D00D49EA6 /* KillDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillDetailViewController.m; sourceTree = "<group>"; };
+		33E7CFBF19F7A79A00D49EA6 /* KillDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillDetailCell.h; sourceTree = "<group>"; };
+		33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillDetailCell.m; sourceTree = "<group>"; };
 		33FFA01819BAB5D000EFFC8D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		33FFA01A19BAB5D800EFFC8D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		33FFA01C19BAB5DF00EFFC8D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -796,6 +828,10 @@
 				335D22D319EE466100EB99B5 /* GroupsViewController.m */,
 				335D22E119EE5E8F00EB99B5 /* GroupDetailViewController.h */,
 				335D22E219EE5E8F00EB99B5 /* GroupDetailViewController.m */,
+				33E7CFB219F79D1900D49EA6 /* KillListViewController.h */,
+				33E7CFB319F79D1900D49EA6 /* KillListViewController.m */,
+				33E7CFBC19F7A73D00D49EA6 /* KillDetailViewController.h */,
+				33E7CFBD19F7A73D00D49EA6 /* KillDetailViewController.m */,
 			);
 			name = Index0;
 			path = Controllers/Index0;
@@ -812,6 +848,10 @@
 		22557A01199645A3001B5FCC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				33E7CFAD19F79AE200D49EA6 /* killsmall2.png */,
+				33E7CF9E19F7933000D49EA6 /* now_clock.png */,
+				33E7CF9C19F7921E00D49EA6 /* future_clock.png */,
+				33E7CF9A19F7911600D49EA6 /* finish_kill_bg.png */,
 				335D22DF19EE5C6100EB99B5 /* naozhong_img.png */,
 				335D22DD19EE5C5900EB99B5 /* all_man_img.png */,
 				335D22DB19EE594200EB99B5 /* now_kill_bg.png */,
@@ -880,6 +920,12 @@
 				2267B492199A14D400FA9FED /* RobedRecordCell.xib */,
 				335D22D519EE46B300EB99B5 /* CurrentGroupCell.h */,
 				335D22D619EE46B300EB99B5 /* CurrentGroupCell.m */,
+				33E7CF6219F7727C00D49EA6 /* MyGroupCell.h */,
+				33E7CF6319F7727C00D49EA6 /* MyGroupCell.m */,
+				33E7CFAF19F79C4C00D49EA6 /* KillGoodCell.h */,
+				33E7CFB019F79C4C00D49EA6 /* KillGoodCell.m */,
+				33E7CFBF19F7A79A00D49EA6 /* KillDetailCell.h */,
+				33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -930,6 +976,8 @@
 				227240AE19B352F9005210B2 /* RobService.m */,
 				335D22D819EE513400EB99B5 /* GroupService.h */,
 				335D22D919EE513400EB99B5 /* GroupService.m */,
+				33E7CFB919F79F6000D49EA6 /* KillService.h */,
+				33E7CFBA19F79F6000D49EA6 /* KillService.m */,
 			);
 			path = Index0;
 			sourceTree = "<group>";
@@ -986,6 +1034,7 @@
 		22B4981719AF54A400901ED6 /* JsonModel */ = {
 			isa = PBXGroup;
 			children = (
+				33E7CFB519F79E2700D49EA6 /* Kills */,
 				335D22C619EE42FD00EB99B5 /* Groups */,
 				221DA24319B5ADF800C9F747 /* Reward */,
 				22156BFD19B4431C00D0EEB6 /* OrderDetail */,
@@ -1163,8 +1212,19 @@
 			children = (
 				335D22C719EE42FD00EB99B5 /* Groups.h */,
 				335D22C819EE42FD00EB99B5 /* Groups.m */,
+				33E7CF6519F776C700D49EA6 /* MyGroups.h */,
+				33E7CF6619F776C700D49EA6 /* MyGroups.m */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		33E7CFB519F79E2700D49EA6 /* Kills */ = {
+			isa = PBXGroup;
+			children = (
+				33E7CFB619F79E4400D49EA6 /* Kills.h */,
+				33E7CFB719F79E4400D49EA6 /* Kills.m */,
+			);
+			path = Kills;
 			sourceTree = "<group>";
 		};
 		33FFA03019BAD7EA00EFFC8D /* UMessage_Sdk_1.1.0 */ = {
@@ -1268,6 +1328,7 @@
 				222514F7199D914E003DCAC1 /* main_me@2x.png in Resources */,
 				335D22DC19EE594200EB99B5 /* now_kill_bg.png in Resources */,
 				2210E5AF19AF354B00E4F1FB /* shopping_cart1@2x.png in Resources */,
+				33E7CF9F19F7933000D49EA6 /* now_clock.png in Resources */,
 				22CFAE801999A89600BBD914 /* userIcon.jpg in Resources */,
 				335D22CE19EE434000EB99B5 /* buy.png in Resources */,
 				225E3DEA199B3F8B00BDCAE9 /* SelectItemsTableViewController.xib in Resources */,
@@ -1288,6 +1349,7 @@
 				22CFAE921999AC1200BBD914 /* order.png in Resources */,
 				222514F6199D914E003DCAC1 /* main_lotteryDraw_light@2x.png in Resources */,
 				222514F1199D914E003DCAC1 /* home_page_light@2x.png in Resources */,
+				33E7CFAE19F79AE200D49EA6 /* killsmall2.png in Resources */,
 				335D22CF19EE434000EB99B5 /* miao.png in Resources */,
 				2267B49E199A14D400FA9FED /* RobedRecordCell.xib in Resources */,
 				22CFAE941999B82100BBD914 /* second_hand_info.png in Resources */,
@@ -1302,10 +1364,12 @@
 				2267B496199A14D400FA9FED /* ItemInfosCell.xib in Resources */,
 				22F09748199DF24F007B9E7B /* RewardCell.xib in Resources */,
 				22557A06199645A3001B5FCC /* lotteryDraw.png in Resources */,
+				33E7CF9D19F7921E00D49EA6 /* future_clock.png in Resources */,
 				22CFAE821999AB9100BBD914 /* attention.png in Resources */,
 				224B35241995DAB7009523F6 /* Main.storyboard in Resources */,
 				22212AE4199CB732006A0473 /* hongbao.jpg in Resources */,
 				22CFAE841999ABA500BBD914 /* activity.png in Resources */,
+				33E7CF9B19F7911600D49EA6 /* finish_kill_bg.png in Resources */,
 				335D22E019EE5C6100EB99B5 /* naozhong_img.png in Resources */,
 				22BAA57A19979C4400B1948A /* User.storyboard in Resources */,
 				22CFAE881999ABC500BBD914 /* ic_update.png in Resources */,
@@ -1375,6 +1439,7 @@
 				222514FF199D9A3D003DCAC1 /* WebViewController.m in Sources */,
 				22F7C97519B0BBDB003B7B61 /* GoodForSubmit.m in Sources */,
 				223E97CE19B4C155005AF6A3 /* SubMenuCell.m in Sources */,
+				33E7CFBB19F79F6000D49EA6 /* KillService.m in Sources */,
 				330FA5DB19B17F070026DFB2 /* UIKeyboardView.m in Sources */,
 				22156BFC19B4273200D0EEB6 /* TradeOrderDetailCell.m in Sources */,
 				227240A019B350C0005210B2 /* RobOrderData.m in Sources */,
@@ -1399,6 +1464,7 @@
 				22BAA5801997AF7000B1948A /* LoginViewOperation.m in Sources */,
 				227240CB19B352F9005210B2 /* Index2Service.m in Sources */,
 				22BAA57D19979E5100B1948A /* RegisterViewController.m in Sources */,
+				33E7CF6719F776C700D49EA6 /* MyGroups.m in Sources */,
 				22082CFD19A480F70088D8C3 /* NSString+MT.m in Sources */,
 				22156BF919B4269100D0EEB6 /* TradeOrderDetailViewController.m in Sources */,
 				335D22DA19EE513400EB99B5 /* GroupService.m in Sources */,
@@ -1409,6 +1475,7 @@
 				22B4982919AF567800901ED6 /* CartInfo.m in Sources */,
 				222CC39D199866E40091AA1D /* UserDefaults.m in Sources */,
 				22FAB7D819A38DA400A7C0BE /* RobModel.m in Sources */,
+				33E7CFC119F7A79A00D49EA6 /* KillDetailCell.m in Sources */,
 				22F0974B199E0D55007B9E7B /* RewardRecordsViewController.m in Sources */,
 				2267B495199A14D400FA9FED /* ItemInfosCell.m in Sources */,
 				2298028F19A2EC1500E353EF /* MJRefreshHeaderView.m in Sources */,
@@ -1423,6 +1490,7 @@
 				2207A6FA19B2BCF50067B00C /* Buying.m in Sources */,
 				225E3DE9199B3F8B00BDCAE9 /* SelectItemsTableViewController.m in Sources */,
 				2267B4311999E2F600FA9FED /* PurchaseCarItemsViewController.m in Sources */,
+				33E7CFBE19F7A73D00D49EA6 /* KillDetailViewController.m in Sources */,
 				2213C71119A1DF3D001A9CF2 /* PrizeDao.m in Sources */,
 				335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */,
 				2298029119A2EC1500E353EF /* UIScrollView+MJRefresh.m in Sources */,
@@ -1443,6 +1511,7 @@
 				227240DB19B3566F005210B2 /* OrderCell.m in Sources */,
 				227240CD19B352F9005210B2 /* Index4Service.m in Sources */,
 				22251504199DB9A7003DCAC1 /* FeedbackViewController.m in Sources */,
+				33E7CFB119F79C4C00D49EA6 /* KillGoodCell.m in Sources */,
 				2213C70E19A1DF2F001A9CF2 /* PrizeModel.m in Sources */,
 				2298028D19A2EC1500E353EF /* MJRefreshConst.m in Sources */,
 				225579FF19964597001B5FCC /* RobViewController.m in Sources */,
@@ -1461,7 +1530,9 @@
 				331DEC6519B7FA6600736330 /* TradeCell.m in Sources */,
 				2267B499199A14D400FA9FED /* PastRobItemCell.m in Sources */,
 				224B35511995DD6B009523F6 /* Index3ViewController.m in Sources */,
+				33E7CFB819F79E4400D49EA6 /* Kills.m in Sources */,
 				227240C819B352F9005210B2 /* RobService.m in Sources */,
+				33E7CFB419F79D1900D49EA6 /* KillListViewController.m in Sources */,
 				2267B497199A14D400FA9FED /* MenuCollectionCell.m in Sources */,
 				22F1E54719A0B69100E66885 /* DatasTableViewController.m in Sources */,
 				335D22C919EE42FD00EB99B5 /* Groups.m in Sources */,
@@ -1473,6 +1544,7 @@
 				2272409C19B33DCD005210B2 /* MyOrderViewController.m in Sources */,
 				22F1E54319A0ABFE00E66885 /* ChooseAreaViewController.m in Sources */,
 				22F1E53D19A0A35400E66885 /* ProduceCode.m in Sources */,
+				33E7CF6419F7727C00D49EA6 /* MyGroupCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

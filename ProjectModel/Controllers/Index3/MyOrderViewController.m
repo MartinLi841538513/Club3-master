@@ -14,7 +14,8 @@
 #import "NSString+MT.h"
 #import "MyOrderService.h"
 #import "OrderDetailData.h"
-
+#import "MyGroupCell.h"
+#import "MyGroups.h"
 @interface MyOrderViewController ()
 {
     MyOrderService *myOrderService;
@@ -73,6 +74,18 @@
         cell.time.text = [stamp timeType3FromStamp:stamp];
         cell.status.text = order.status;
         return cell;
+    }else if(self.orderType==GroupOrderType){
+        MyGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyGroupCell" forIndexPath:indexPath];
+        NSInteger row = indexPath.row;
+        MyGroupOrder *order = [self.items objectAtIndex:row];
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,order.picture]]];
+        cell.name.text = order.gname;
+        cell.discount.text = [NSString stringWithFormat:@"%@元/%@",order.discount,order.unit];
+        cell.price.text = [NSString stringWithFormat:@"%@元/%@",order.price,order.unit];
+        cell.time.text = order.regtime;
+        cell.number.text = order.nums;
+        cell.status.text = order.status;
+        return cell;
     }else{
         return nil;
     }
@@ -82,6 +95,8 @@
         return 90.0f;
     }else if(self.orderType==TradeOrderType){
         return 57.0f;
+    }else if(self.orderType==GroupOrderType){
+        return 119.0f;
     }else{
         return 0;
     }
@@ -101,6 +116,8 @@
         [myOrderService loadTradeOrderInViewController:self];
     }else if(seg.selectedSegmentIndex==1){
         [myOrderService loadRobOrderInViewController:self];
+    }else if (seg.selectedSegmentIndex==2){
+        [myOrderService loadGroupOrderInViewController:self];
     }
 }
 

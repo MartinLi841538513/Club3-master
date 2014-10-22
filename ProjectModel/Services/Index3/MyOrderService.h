@@ -13,5 +13,6 @@
 @interface MyOrderService : NSObject
 -(void)loadTradeOrderInViewController:(MyOrderViewController *)viewController;
 -(void)loadRobOrderInViewController:(MyOrderViewController *)viewController;
+-(void)loadGroupOrderInViewController:(MyOrderViewController *)viewController;
 -(void)pushToDetailViewControllerWithItem:(TradeOrder *)item onViewController:(MyOrderViewController *)myOrderViewController;
 @end

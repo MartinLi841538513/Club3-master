@@ -47,4 +47,17 @@
         }
     }];
 }
+
+/*
+    秒转化成详细时间
+ */
+-(NSString *)toDetailTime:(int)seconds{
+    int second = seconds % 60;
+    int minute = (seconds-second)/60%60;
+    int hour = (seconds-second-minute*60)/60/60%24;
+    int day = (seconds-second-minute*60-hour*60*24)/60/60/24%24;
+    
+    NSString *detailTime = [NSString stringWithFormat:@"还剩%d天 %d:%d:%d",day,hour,minute,second];
+    return detailTime;
+}
 @end

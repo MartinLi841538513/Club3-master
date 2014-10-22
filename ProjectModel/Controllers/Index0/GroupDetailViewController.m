@@ -14,7 +14,10 @@
 {
     GroupService *groupService;
     ItemDetailService *itemDetailService;
+    NSTimer *timer;
+    int countDownSeconds;
 }
+@property (weak, nonatomic) IBOutlet UIButton *addGroupButton;
 @end
 
 @implementation GroupDetailViewController
@@ -24,13 +27,16 @@
     // Do any additional setup after loading the view.
     self.title = self.groupGood.name;
     self.expect_num.text = [NSString stringWithFormat:@"%@人起团",self.groupGood.expect_num];
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,self.groupGood.picture]]];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,self.groupGood.bigpicture]]];
+    countDownSeconds = self.groupGood.seconds;
+    self.time.text = [groupService toDetailTime:countDownSeconds];
     self.actual_num.text = [NSString stringWithFormat:@"%@人已参团",self.groupGood.actual_num];
     self.price.text = [NSString stringWithFormat:@"原价:%@元/%@",self.groupGood.price,self.groupGood.unit];
     self.discount.text = [NSString stringWithFormat:@"%@元/%@",self.groupGood.discount,self.groupGood.unit];
     
     groupService = [[GroupService alloc] init];
     itemDetailService = [[ItemDetailService alloc] init];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,4 +74,15 @@
         [groupService addToGroupInViewController:self withPassword:password];
     }
 }
+
+-(void)countDownTimer{
+    if (countDownSeconds==0) {
+        self.addGroupButton.enabled = NO;
+        [timer invalidate];
+    }else{
+        countDownSeconds--;
+        self.time.text = [groupService toDetailTime:countDownSeconds];
+    }
+}
+
 @end

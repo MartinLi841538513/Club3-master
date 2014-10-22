@@ -10,27 +10,20 @@
 	<string>Club</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>475A498B-33F6-49DD-A975-144B44D14DE6</key>
+		<key>7893139f-509e-0709-6150-ce57b7db7bff++505</key>
 		<string>https://github.com/MartinLi841538513/Club3-master</string>
 		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
-		<string>https://github.com/MartinLi841538513/Club2/trunk</string>
+		<string>https://github.com/MartinLi841538513/Club2</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Club.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>475A498B-33F6-49DD-A975-144B44D14DE6</key>
+		<key>7893139f-509e-0709-6150-ce57b7db7bff++505</key>
 		<string>../../Club3-master</string>
 		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
 		<string>..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
-		<string>https://github.com/MartinLi841538513/Club2</string>
-	</dict>
-	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/MartinLi841538513/Club3-master</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -41,13 +34,13 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>475A498B-33F6-49DD-A975-144B44D14DE6</string>
+			<string>7893139f-509e-0709-6150-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Club3-master</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
+			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
@@ -55,7 +48,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>

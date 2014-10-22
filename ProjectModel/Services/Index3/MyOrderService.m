@@ -13,6 +13,7 @@
 #import "JSONModelLib.h"
 #import "SVProgressHUD.h"
 #import "OrderDetailData.h"
+#import "MyGroups.h"
 @implementation MyOrderService
 
 /*
@@ -66,8 +67,6 @@
                 RobOrderInfo *info = object.info;
                 NSArray *orders = info.order;
                 viewController.items = orders;
-
-                NSLog(@"%@",orders);
             }else if(status==840){
                 viewController.items = nil;
                 [SVProgressHUD showErrorWithStatus:@"没有数据"];
@@ -83,6 +82,42 @@
         viewController.orderType = RobOrderType;
         [viewController.tableview reloadData];
     }];
+}
+
+/*
+    加载我的团购
+ */
+-(void)loadGroupOrderInViewController:(MyOrderViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = [userDefaults userModel];
+    NSString *mid = userModel.mid;
+    NSString *page = @"1";
+    NSString *urlString = [NSString stringWithFormat:MyGroupsURL,mid,page];
+    NSLog(@"%@",urlString);
+    MyGroups *myGroups = [[MyGroups alloc] initFromURLWithString:urlString completion:^(MyGroups *object,JSONModelError *error){
+        NSLog(@"%@",myGroups);
+        if (!error) {
+            NSInteger status = object.status;
+            if (status==2) {
+                MyGroupOrderInfo *info = object.info;
+                NSArray *orders = info.orders;
+                viewController.items = orders;
+            }else if(status==840){
+                viewController.items = nil;
+                [SVProgressHUD showErrorWithStatus:@"没有数据"];
+            }else{
+                viewController.items = nil;
+                [SVProgressHUD showErrorWithStatus:@"数据加载错误"];
+            }
+        }else{
+            viewController.items = nil;
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
+            NSLog(@"%@",error);
+        }
+        viewController.orderType = GroupOrderType;
+        [viewController.tableview reloadData];
+    }];
+//    MyGroups *myGroups
 }
 
 /*
