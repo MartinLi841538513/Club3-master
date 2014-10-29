@@ -25,8 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = self.good.name;
+    
     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
     countDownSeconds = self.good.seconds;
+    NSLog(@"%@",self.good.gid);
     groupService = [[GroupService alloc] init];
 }
 

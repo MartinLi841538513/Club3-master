@@ -192,6 +192,7 @@
 		33E7CFBB19F79F6000D49EA6 /* KillService.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFBA19F79F6000D49EA6 /* KillService.m */; };
 		33E7CFBE19F7A73D00D49EA6 /* KillDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFBD19F7A73D00D49EA6 /* KillDetailViewController.m */; };
 		33E7CFC119F7A79A00D49EA6 /* KillDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */; };
+		33F7608B1A00ABEA0058FC6C /* KillCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7608A1A00ABEA0058FC6C /* KillCountDown.m */; };
 		33FFA03319BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */; };
 		33FFA03419BADB0E00EFFC8D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA02219BAB60200EFFC8D /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -511,6 +512,8 @@
 		33E7CFBD19F7A73D00D49EA6 /* KillDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillDetailViewController.m; sourceTree = "<group>"; };
 		33E7CFBF19F7A79A00D49EA6 /* KillDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillDetailCell.h; sourceTree = "<group>"; };
 		33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillDetailCell.m; sourceTree = "<group>"; };
+		33F760891A00ABEA0058FC6C /* KillCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillCountDown.h; sourceTree = "<group>"; };
+		33F7608A1A00ABEA0058FC6C /* KillCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillCountDown.m; sourceTree = "<group>"; };
 		33FFA01819BAB5D000EFFC8D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		33FFA01A19BAB5D800EFFC8D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		33FFA01C19BAB5DF00EFFC8D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -1223,6 +1226,8 @@
 			children = (
 				33E7CFB619F79E4400D49EA6 /* Kills.h */,
 				33E7CFB719F79E4400D49EA6 /* Kills.m */,
+				33F760891A00ABEA0058FC6C /* KillCountDown.h */,
+				33F7608A1A00ABEA0058FC6C /* KillCountDown.m */,
 			);
 			path = Kills;
 			sourceTree = "<group>";
@@ -1545,6 +1550,7 @@
 				22F1E54319A0ABFE00E66885 /* ChooseAreaViewController.m in Sources */,
 				22F1E53D19A0A35400E66885 /* ProduceCode.m in Sources */,
 				33E7CF6419F7727C00D49EA6 /* MyGroupCell.m in Sources */,
+				33F7608B1A00ABEA0058FC6C /* KillCountDown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

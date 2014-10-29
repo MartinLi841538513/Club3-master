@@ -11,21 +11,30 @@
 #import "Kills.h"
 #import "UserDefaults.h"
 #import "UserModel.h"
-
+#import "KillCountDown.h"
 @implementation KillService
 
 -(void)loadKillListInViewController:(KillListViewController *)viewController{
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     
-    NSString *urlString = [NSString stringWithFormat:GroupsURL,userModel.mid,@"2",@"1"];
+    NSString *urlString = [NSString stringWithFormat:KillsURL,userModel.mid,@"2",@"1"];
     NSLog(@"%@",urlString);
-    Kills *groups = [[Kills alloc] initFromURLWithString:urlString completion:^(Kills *model,JSONModelError *error){
-        NSLog(@"%@ ,%@",groups,urlString);
+    Kills *kills = [[Kills alloc] initFromURLWithString:urlString completion:^(Kills *model,JSONModelError *error){
+        NSLog(@"%@ ,%@",kills,urlString);
         viewController.datas = model.info.goods;
         [viewController.tableview reloadData];
     }];
 
+}
+
+-(void)loadCountDownInViewController:(KillDetailViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = [userDefaults userModel];
+    NSString *mid = userModel.mid;
+    NSString *gid = viewController.good.gid;
+//    NSString *urlString = [[NSString ]]
+//    KillCountDown *killCountDown = [[KillCountDown alloc] initFromURLWithString:<#(NSString *)#> completion:<#^(id model, JSONModelError *err)completeBlock#>]
 }
 
 @end

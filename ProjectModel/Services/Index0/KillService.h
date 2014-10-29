@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KillListViewController.h"
+#import "KillDetailViewController.h"
 @interface KillService : NSObject
 -(void)loadKillListInViewController:(KillListViewController *)viewController;
 @end

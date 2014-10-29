@@ -27,8 +27,8 @@
 
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
-#define IP @"http://earea.stcyclub.com"
-//#define IP @"http://scope.stcyclub.com"
+//#define IP @"http://earea.stcyclub.com"
+#define IP @"http://scope.stcyclub.com"
 
 #define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
 //登录
@@ -96,4 +96,6 @@
 
 //秒杀
 #define KillsURL [PrexURL stringByAppendingString: @"Secondkill/goodslist?mid=%@&type=%@&page=%@"]
-
+#define KillActionURL [PrexURL stringByAppendingString: @"Secondkill/secondkill?mid=%@&gid=%@"]
+//倒计时
+#define KillCountDownURL [PrexURL stringByAppendingString: @"Secondkill/countdown?mid=%@&gid=%@"]
