@@ -22,10 +22,18 @@
     UserModel *userModel = [userDefaults userModel];
     
     NSString *urlString = [NSString stringWithFormat:GroupsURL,userModel.mid,@"2",@"1"];
+    [SVProgressHUD show];
     Groups *groups = [[Groups alloc] initFromURLWithString:urlString completion:^(Groups *model,JSONModelError *error){
         NSLog(@"%@ ,%@",groups,urlString);
-        viewController.datas = model.info.goods;
-        [viewController.tableview reloadData];
+        if (model.status==2) {
+            viewController.datas = model.info.goods;
+            [viewController.tableview reloadData];
+            [SVProgressHUD dismiss];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+            NSLog(@"status:%ld",(long)model.status);
+        }
+
     }];
 }
 
@@ -42,8 +50,11 @@
         NSLog(@"%@",status);
         if (model.status == 2) {
             [SVProgressHUD showSuccessWithStatus:@"加入团购成功"];
+        }else if(model.status == 882){
+            [SVProgressHUD showErrorWithStatus:@"打烊了"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"加入团购失败"];
+            NSLog(@"status:%ld",(long)model.status);
         }
     }];
 }
@@ -51,7 +62,7 @@
 /*
     秒转化成详细时间
  */
--(NSString *)toDetailTime:(int)seconds{
+-(NSString *)toDetailTime:(NSInteger)seconds{
     int second = seconds % 60;
     int minute = (seconds-second)/60%60;
     int hour = (seconds-second-minute*60)/60/60%24;

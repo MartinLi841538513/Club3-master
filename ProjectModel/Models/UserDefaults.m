@@ -31,7 +31,7 @@
     return [self.userDefaults valueForKey:@"isLogin"];
 }
 
-//登陆状态
+
 -(void)setUserModel:(UserModel *)userModel
 {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:userModel];

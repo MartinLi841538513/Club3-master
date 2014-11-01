@@ -27,7 +27,7 @@
         //特卖
         UserDefaults *userDefaults = [[UserDefaults alloc] init];
         UserModel *userModel = [userDefaults userModel];
-        viewController.goods = userModel.goods;
+        viewController.goods = [NSMutableArray arrayWithArray:userModel.goods];
         [self removeChildViewControllerInViewController:viewController];
         [viewController.tableview reloadData];
     }else{
@@ -50,7 +50,7 @@
                     goods = [dicts objectForKey:subtypeId];
                     [SVProgressHUD dismiss];
                 }
-                viewController.goods = goods;
+                viewController.goods = [NSMutableArray arrayWithArray:goods];
                 [viewController.tableview reloadData];
             });
         });

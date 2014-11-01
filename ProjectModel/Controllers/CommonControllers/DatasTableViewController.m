@@ -71,9 +71,6 @@
             ids = [self propertiesByDatas:datas withKey:@"area"];
             break;
         case 3:
-            ids = [self propertiesByDatas:datas withKey:@"aid"];
-            break;
-        case 4:
             ids = [self propertiesByDatas:datas withKey:@"sid"];
             break;
         default:

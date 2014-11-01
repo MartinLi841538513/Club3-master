@@ -14,6 +14,7 @@
 #import "SVProgressHUD.h"
 #import "OrderDetailData.h"
 #import "MyGroups.h"
+#import "MySecond.h"
 @implementation MyOrderService
 
 /*
@@ -151,7 +152,40 @@
         }
         [viewController.tableview reloadData];
     }];
+}
 
+/*
+    我的秒杀订单
+ */
+-(void)loadKillOrderInViewController:(MyOrderViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = [userDefaults userModel];
+    NSString *mid = userModel.mid;
+    NSString *page = @"1";
+    NSString *urlString = [NSString stringWithFormat:KillOrderURL,mid,page];
+    NSLog(@"%@",urlString);
+    [SVProgressHUD show];
+    [MySecond getModelFromURLWithString:urlString completion:^(MySecond *object,JSONModelError *error){
+        if (!error) {
+            NSInteger status = object.status;
+            if (status==2) {
+                viewController.items = object.info.orders;
+                [SVProgressHUD dismiss];
+            }else if(status==840){
+                viewController.items = nil;
+                [SVProgressHUD showErrorWithStatus:@"没有数据"];
+            }else{
+                viewController.items = nil;
+                [SVProgressHUD showErrorWithStatus:@"数据加载错误"];
+            }
+        }else{
+            viewController.items = nil;
+            [SVProgressHUD showErrorWithStatus:@"没有数据"];
+            NSLog(@"%@",error);
+        }
+        viewController.orderType = KillOrderType;
+        [viewController.tableview reloadData];
+    }];
 
 }
 

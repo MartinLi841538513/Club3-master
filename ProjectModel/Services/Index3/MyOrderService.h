@@ -15,4 +15,6 @@
 -(void)loadRobOrderInViewController:(MyOrderViewController *)viewController;
 -(void)loadGroupOrderInViewController:(MyOrderViewController *)viewController;
 -(void)pushToDetailViewControllerWithItem:(TradeOrder *)item onViewController:(MyOrderViewController *)myOrderViewController;
+-(void)loadKillOrderInViewController:(MyOrderViewController *)viewController;
+
 @end

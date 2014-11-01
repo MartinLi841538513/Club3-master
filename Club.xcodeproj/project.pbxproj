@@ -195,6 +195,8 @@
 		33F7608B1A00ABEA0058FC6C /* KillCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7608A1A00ABEA0058FC6C /* KillCountDown.m */; };
 		33FFA03319BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */; };
 		33FFA03419BADB0E00EFFC8D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA02219BAB60200EFFC8D /* libz.dylib */; };
+		8FA4F41E1A03A82A00B72665 /* KillOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */; };
+		8FA4F4211A03A98F00B72665 /* MySecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4F4201A03A98F00B72665 /* MySecond.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -523,6 +525,10 @@
 		33FFA02419BABAAB00EFFC8D /* libPods-libPusher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-libPusher.a"; path = "Pods/build/Debug-iphoneos/libPods-libPusher.a"; sourceTree = "<group>"; };
 		33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		33FFA03219BAD7EA00EFFC8D /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		8FA4F41C1A03A82A00B72665 /* KillOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillOrderCell.h; sourceTree = "<group>"; };
+		8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillOrderCell.m; sourceTree = "<group>"; };
+		8FA4F41F1A03A98F00B72665 /* MySecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySecond.h; sourceTree = "<group>"; };
+		8FA4F4201A03A98F00B72665 /* MySecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySecond.m; sourceTree = "<group>"; };
 		B2921EB9835E49F9B75E51AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4FB5B076F645F999A09D57 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -582,6 +588,8 @@
 				22156BFB19B4273200D0EEB6 /* TradeOrderDetailCell.m */,
 				331DEC6319B7FA6600736330 /* TradeCell.h */,
 				331DEC6419B7FA6600736330 /* TradeCell.m */,
+				8FA4F41C1A03A82A00B72665 /* KillOrderCell.h */,
+				8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1228,6 +1236,8 @@
 				33E7CFB719F79E4400D49EA6 /* Kills.m */,
 				33F760891A00ABEA0058FC6C /* KillCountDown.h */,
 				33F7608A1A00ABEA0058FC6C /* KillCountDown.m */,
+				8FA4F41F1A03A98F00B72665 /* MySecond.h */,
+				8FA4F4201A03A98F00B72665 /* MySecond.m */,
 			);
 			path = Kills;
 			sourceTree = "<group>";
@@ -1496,6 +1506,7 @@
 				225E3DE9199B3F8B00BDCAE9 /* SelectItemsTableViewController.m in Sources */,
 				2267B4311999E2F600FA9FED /* PurchaseCarItemsViewController.m in Sources */,
 				33E7CFBE19F7A73D00D49EA6 /* KillDetailViewController.m in Sources */,
+				8FA4F4211A03A98F00B72665 /* MySecond.m in Sources */,
 				2213C71119A1DF3D001A9CF2 /* PrizeDao.m in Sources */,
 				335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */,
 				2298029119A2EC1500E353EF /* UIScrollView+MJRefresh.m in Sources */,
@@ -1520,6 +1531,7 @@
 				2213C70E19A1DF2F001A9CF2 /* PrizeModel.m in Sources */,
 				2298028D19A2EC1500E353EF /* MJRefreshConst.m in Sources */,
 				225579FF19964597001B5FCC /* RobViewController.m in Sources */,
+				8FA4F41E1A03A82A00B72665 /* KillOrderCell.m in Sources */,
 				227240C519B352F9005210B2 /* ItemDetailService.m in Sources */,
 				332F551619B1BF3C00333C4A /* RobRecordInfo.m in Sources */,
 				22F1E52819A082CC00E66885 /* UserModel.m in Sources */,
@@ -1641,7 +1653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1673,7 +1685,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1750,14 +1762,14 @@
 		224B35431995DAB7009523F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectModel.app/ProjectModel";
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProjectModel/ProjectModel-Prefix.pch";
+				GCC_PREFIX_HEADER = "ProjectModel/Club-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1772,14 +1784,14 @@
 		224B35441995DAB7009523F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProjectModel.app/ProjectModel";
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProjectModel/ProjectModel-Prefix.pch";
+				GCC_PREFIX_HEADER = "ProjectModel/Club-Prefix.pch";
 				INFOPLIST_FILE = "ProjectModelTests/ClubTests-Info.plist";
 				PRODUCT_NAME = ClubTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";

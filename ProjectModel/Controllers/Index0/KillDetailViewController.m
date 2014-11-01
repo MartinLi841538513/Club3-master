@@ -11,12 +11,16 @@
 #import <UIImageView+WebCache.h>
 #import "SVProgressHUD.h"
 #import "GroupService.h"
+#import "KillService.h"
 
-@interface KillDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@interface KillDetailViewController ()<UITableViewDataSource,UITableViewDelegate,KillServiceDelegate>
 {
     NSTimer *timer;
-    int countDownSeconds;
+    NSInteger initTime;
+    NSInteger countDownSeconds;
     GroupService *groupService;
+    KillService *killService;
 }
 @end
 
@@ -26,11 +30,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = self.good.name;
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
-    countDownSeconds = self.good.seconds;
-    NSLog(@"%@",self.good.gid);
     groupService = [[GroupService alloc] init];
+    killService = [[KillService alloc] init];
+    killService.delegate = self;
+    [killService loadCountDownInViewController:self];
+    
+    NSLog(@"%@",self.good.gid);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,18 +64,34 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+#pragma KillServiceDelegate
+-(void)startCountDownActionWithSeconds:(NSInteger)seconds{
+    initTime = seconds;
+    countDownSeconds = seconds;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTimer) userInfo:nil repeats:YES];
+
+}
+
 - (IBAction)buyAction:(id)sender {
-    if (countDownSeconds==0) {
-        [SVProgressHUD showSuccessWithStatus:@"正在开发中"];
+
+    if (initTime == 0) {
+        [SVProgressHUD showErrorWithStatus:@"商品已过期"];
+    }else if (countDownSeconds==0) {
+        [killService killInViewController:self];
     }else{
         [SVProgressHUD showErrorWithStatus:@"还没到时间"];
     }
 }
 
 -(void)countDownTimer{
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     KillDetailCell *cell = (KillDetailCell *)[self.tableview cellForRowAtIndexPath:indexPath];
-    if (countDownSeconds==0) {
+
+    if (initTime==0) {
+        [timer invalidate];
+    }else if (countDownSeconds==0) {
         [self.buyButton setBackgroundColor:[UIColor redColor]];
         [timer invalidate];
     }else{

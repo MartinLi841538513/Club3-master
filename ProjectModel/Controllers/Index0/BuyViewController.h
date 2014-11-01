@@ -11,6 +11,6 @@
 #import "MenuListViewController.h"
 
 @interface BuyViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,UITableViewCellDelegate,MenuItemsCollectionControllerDelegate>
-@property (nonatomic,strong)NSArray *goods;
+@property (nonatomic,strong)NSMutableArray *goods;
 @property (nonatomic,strong)UITableView *tableview;
 @end

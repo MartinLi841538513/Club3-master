@@ -75,8 +75,11 @@
                     
                 }else if([result isEqual:[NSNumber numberWithInt:822]]){
                     [SVProgressHUD showErrorWithStatus:@"你已完成今日抢菜，请去\"我的订单\"查看您抢的菜"];
+                }else if([result isEqual:[NSNumber numberWithInt:823]]){
+                    [SVProgressHUD showErrorWithStatus:@"商品已过期"];
                 }else{
                     [SVProgressHUD showErrorWithStatus:@"很遗憾，没抢到"];
+                    NSLog(@"%@",result);
                 }
             });
         });

@@ -12,5 +12,5 @@
 @interface GroupService : NSObject
 -(void)loadCurrentGroupDataInViewController:(GroupsViewController *)viewController;
 -(void)addToGroupInViewController:(GroupDetailViewController *)viewController withPassword:(NSString *)password;
--(NSString *)toDetailTime:(int)seconds;
+-(NSString *)toDetailTime:(NSInteger)seconds;
 @end

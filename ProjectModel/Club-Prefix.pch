@@ -27,9 +27,9 @@
 
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
-//#define IP @"http://earea.stcyclub.com"
-#define IP @"http://scope.stcyclub.com"
-
+#define IP @"http://earea.stcyclub.com"
+//#define IP @"http://scope.stcyclub.com"
+#define PrexImgPath [NSString stringWithFormat:@"%@/Static/Uploads/img/",IP]
 #define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
 //登录
 #define LoginURL [PrexURL stringByAppendingString: @"Member/login?loginname=%@&password=%@"]
@@ -43,8 +43,8 @@
 #define ChooseProvinceURL [PrexURL stringByAppendingString: @"Member/province/"]
 #define ChooseCityURL [PrexURL stringByAppendingString: @"Member/city?province=%@"]
 #define ChooseAreaURL [PrexURL stringByAppendingString: @"Member/area?city=%@"]
-#define ChooseEareaURL [PrexURL stringByAppendingString: @"Member/earea?area=%@"]
-#define ChooseScopeURL [PrexURL stringByAppendingString: @"Member/scope?aid=%@"]
+//#define ChooseEareaURL [PrexURL stringByAppendingString: @"Member/earea?area=%@"]
+#define ChooseScopeURL [PrexURL stringByAppendingString: @"Member/scope?area=%@"]
 #define BindScopeURL [PrexURL stringByAppendingString: @"Member/glscope?mid=%@&sid=%@"]
 //上传图片
 #define UploadImageURL [PrexURL stringByAppendingString: @"Member/head/"]
@@ -99,3 +99,6 @@
 #define KillActionURL [PrexURL stringByAppendingString: @"Secondkill/secondkill?mid=%@&gid=%@"]
 //倒计时
 #define KillCountDownURL [PrexURL stringByAppendingString: @"Secondkill/countdown?mid=%@&gid=%@"]
+//我的秒杀订单
+#define KillOrderURL [PrexURL stringByAppendingString: @"Secondkill/mysecond?mid=%@&page=%@"]
+

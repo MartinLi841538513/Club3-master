@@ -17,7 +17,7 @@
 #import "BuyService.h"
 #import "MenuCollectionCell.h"
 #import "ItemDetailService.h"
-
+#import "MJRefresh.h"
 @interface BuyViewController ()
 {
     UICollectionView *collectionview;
@@ -31,6 +31,7 @@
     UserModel *userModel;
     
     BuyService *buyService;
+    NSInteger page;
 }
 
 @end
@@ -73,10 +74,11 @@
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     userModel = [userDefaults userModel];
     menuItems = userModel.gtype;
-    self.goods = userModel.goods;
+    page = 1;
+    self.goods = [NSMutableArray arrayWithArray:userModel.goods];
     
     buyService = [[BuyService alloc] init];
-
+//    [self setupRefresh];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -91,6 +93,83 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+///**
+// *  集成刷新控件
+// */
+//- (void)setupRefresh
+//{
+//    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+//    [self.tableview addHeaderWithTarget:self action:@selector(headerRereshing)];
+//    [self.tableview headerBeginRefreshing];
+//    
+//    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+//    [self.tableview addFooterWithTarget:self action:@selector(footerRereshing)];
+//    
+//    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+//    self.tableview.headerPullToRefreshText = @"下拉可以刷新了";
+//    self.tableview.headerReleaseToRefreshText = @"松开马上刷新了";
+//    self.tableview.headerRefreshingText = @"正在帮你刷新中";
+//    
+//    self.tableview.footerPullToRefreshText = @"上拉可以加载更多数据了";
+//    self.tableview.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+//    self.tableview.footerRefreshingText = @"正在帮你加载中";
+//}
+//
+//#pragma mark 开始进入刷新状态
+//- (void)headerRereshing
+//{
+//    page = 1;
+//    NSString *pageString = [NSString stringWithFormat:@"%ld",(long)page];
+//    NSString *urlString = [NSString stringWithFormat:@"http://earea.stcyclub.com/wap.php/Prize/mylucky?mid=%@&page=%@",@"38",pageString];
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        NSDictionary *result = [InternetRequest loadDataWithUrlString:urlString];
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            NSNumber *status = (NSNumber *)[result objectForKey:@"status"];
+//            if ([status isEqual:[NSNumber numberWithInt:2]]) {
+//                [datas removeAllObjects];
+//                id infos = [result objectForKey:@"info"];
+//                if ([infos isKindOfClass:[NSArray class]]) {
+//                    [datas addObjectsFromArray:infos];
+//                }
+//                [self.tableview reloadData];
+//                [self.tableview headerEndRefreshing];
+//            }else{
+//                [SVProgressHUD showErrorWithStatus:@"没有数据"];
+//                [self.tableview headerEndRefreshing];
+//                page = 0;
+//            }
+//        });
+//    });
+//}
+
+//- (void)footerRereshing
+//{
+//    page++;
+//    NSString *pageString = [NSString stringWithFormat:@"%d",page];
+//    NSString *urlString = [NSString stringWithFormat:@"http://earea.stcyclub.com/wap.php/Prize/mylucky?mid=%@&page=%@",@"38",pageString];
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        NSDictionary *result = [InternetRequest loadDataWithUrlString:urlString];
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            NSNumber *status = (NSNumber *)[result objectForKey:@"status"];
+//            if ([status isEqual:[NSNumber numberWithInt:2]]) {
+//                id infos = [result objectForKey:@"info"];
+//                if ([infos isKindOfClass:[NSArray class]]) {
+//                    [datas addObjectsFromArray:infos];
+//                    [self.tableview reloadData];
+//                }else{
+//                    [SVProgressHUD showErrorWithStatus:@"没有更多数据了"];
+//                }
+//                [self.tableview footerEndRefreshing];
+//            }else{
+//                [SVProgressHUD showErrorWithStatus:@"没有更多数据了"];
+//                [self.tableview footerEndRefreshing];
+//                page--;
+//            }
+//        });
+//    });
+//    
+//}
+
 
 //初始化UIcollectionview
 -(UICollectionView *)collectionview{
@@ -229,7 +308,7 @@
 
 #pragma MenuItemsCollectionControllerDelegate
 -(void)itemSelectedActionWithIndex:(NSInteger)index withObjects:(NSArray *)subtypes{
-    NSLog(@"test:%d  %@",index,subtypes);
+    NSLog(@"test:%ld  %@",(long)index,subtypes);
     [buyService refreshItemsWithObjects:buyService.firstLevelData andSubtypes:subtypes anIndex:index inViewController:self];
 }
 //立即购买

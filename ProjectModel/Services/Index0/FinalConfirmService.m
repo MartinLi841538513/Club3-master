@@ -131,7 +131,7 @@
     NSString *message = viewController.userMessage.text;
     NSString *passwd = [MyMD5 md5:password];
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:mid, @"mid",datas,@"info",payType,@"paymenttype",sendType,@"sendtype",Sendid,@"Sendid",passwd,@"paypassword",address,@"address",mobile,@"mobile",message,@"message",nil];
-    
+    NSLog(@"%@   %@",SubmitItemsURL,dict);
     [SVProgressHUD show];
     [JSONHTTPClient postJSONFromURLWithString:SubmitItemsURL params:dict completion:^(id object, JSONModelError *err) {
         
@@ -144,6 +144,11 @@
            [SVProgressHUD dismiss];
            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无会员卡" message:@"请到小区所在生活馆购买会员卡" delegate:viewController cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
            [alertView show];
+       }else if ([status isEqual:[NSNumber numberWithInt:820]]){
+           [SVProgressHUD showErrorWithStatus:@"商品不存在"];
+       } else{
+           [SVProgressHUD showErrorWithStatus:@"提交失败"];
+           NSLog(@"%@",err);
        }
     }];
 }
@@ -164,7 +169,11 @@
     NSInteger count = datas.count;
     for (NSInteger i=0; i<count; i++) {
         GoodForSubmit *good = [datas objectAtIndex:i];
-        [items appendString:[NSString stringWithFormat:@"%@:%@,",good.gid,good.num]];
+        if (i==count-1) {
+            [items appendString:[NSString stringWithFormat:@"%@:%@",good.gid,good.num]];
+        }else{
+            [items appendString:[NSString stringWithFormat:@"%@:%@,",good.gid,good.num]];
+        }
     }
     return items;
 }

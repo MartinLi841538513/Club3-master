@@ -46,7 +46,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"选择小区";
-    titles = [[NSMutableArray alloc] initWithObjects:@"选择所在省份",@"选择所在城市",@"选择所在区域",@"选择所在社区",@"选择所在小区", nil];
+    titles = [[NSMutableArray alloc] initWithObjects:@"选择所在省份",@"选择所在城市",@"选择所在区域",@"选择所在小区", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,10 +86,7 @@
             urlString = [NSString stringWithFormat:ChooseAreaURL,cityIdSelected];
             break;
         case 3:
-            urlString = [NSString stringWithFormat:ChooseEareaURL,areaIdSelected];
-            break;
-        case 4:
-            urlString = [NSString stringWithFormat:ChooseScopeURL,communityIdSelected];
+            urlString = [NSString stringWithFormat:ChooseScopeURL,areaIdSelected];
             break;
         default:
             break;
@@ -102,7 +99,6 @@
 - (IBAction)submitAction:(id)sender {
     
     NSString *urlString = [NSString stringWithFormat:BindScopeURL,self.userModel.mid,blockIdSelected];
-    
     [self bindScopeWithURLString:urlString];
 }
 
@@ -120,9 +116,6 @@
             areaIdSelected = [data objectForKey:@"area"];
             break;
         case 3:
-            communityIdSelected = [data objectForKey:@"aid"];
-            break;
-        case 4:
             blockIdSelected = [data objectForKey:@"sid"];
             break;
         default:

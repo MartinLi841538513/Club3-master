@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "KillListViewController.h"
 #import "KillDetailViewController.h"
+
+@protocol KillServiceDelegate <NSObject>
+
+-(void)startCountDownActionWithSeconds:(NSInteger)seconds;
+
+@end
+
 @interface KillService : NSObject
+@property(nonatomic,weak)id<KillServiceDelegate> delegate;
 -(void)loadKillListInViewController:(KillListViewController *)viewController;
+-(void)loadCountDownInViewController:(KillDetailViewController *)viewController;
+-(void)killInViewController:(KillDetailViewController *)viewController;
 @end
