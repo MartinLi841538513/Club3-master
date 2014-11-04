@@ -16,6 +16,7 @@
 @property(nonatomic,strong)NSString *redAccount;
 @property(nonatomic,strong)NSString *account;
 
+@property (weak, nonatomic) IBOutlet UIView *thirdView;
 @property (weak, nonatomic) IBOutlet UIButton *payMethod1;
 @property (weak, nonatomic) IBOutlet UIButton *payMethod2;
 @property (weak, nonatomic) IBOutlet UIButton *sendMethod1;

@@ -22,8 +22,7 @@
     用户详情
  */
 -(void)presentUserDetailViewControllerOnViewController:(UIViewController *)viewController{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UserDetailViewController *userDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
+    UserDetailViewController *userDetailViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
     userDetailViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:userDetailViewController animated:YES];
 }
@@ -33,8 +32,7 @@
  */
 -(void)presentMyWalletViewControllerOnViewController:(UIViewController *)viewController{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MyWalletViewController *userDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"MyWalletViewController"];
+    MyWalletViewController *userDetailViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"MyWalletViewController"];
     userDetailViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:userDetailViewController animated:YES];
     
@@ -67,8 +65,7 @@
  我的订单
  */
 -(void)presentMyOrderViewControllerOnViewController:(UIViewController *)viewController{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MyOrderViewController *userDetailViewController = [storyboard instantiateViewControllerWithIdentifier:@"MyOrderViewController"];
+    MyOrderViewController *userDetailViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"MyOrderViewController"];
     userDetailViewController.hidesBottomBarWhenPushed = YES;
     userDetailViewController.orderType = TradeOrderType;
     [viewController.navigationController pushViewController:userDetailViewController animated:YES];
@@ -78,8 +75,7 @@
     用户反馈
  */
 -(void)presentFeedBackViewControllerOnViewController:(UIViewController *)viewController{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FeedbackViewController *feedBackViewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedbackViewController"];
+    FeedbackViewController *feedBackViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"FeedbackViewController"];
     feedBackViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:feedBackViewController animated:YES];
 }
@@ -88,8 +84,7 @@
     我的二维码
  */
 -(void)presentQRCodeViewControllerOnViewController:(UIViewController *)viewController{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    QRCodeViewController *qrCodeViewController = [storyboard instantiateViewControllerWithIdentifier:@"QRCodeViewController"];
+    QRCodeViewController *qrCodeViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"QRCodeViewController"];
     qrCodeViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:qrCodeViewController animated:YES];
 }

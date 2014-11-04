@@ -22,7 +22,8 @@ PODS:
     - AFNetworking/NSURLSession
   - JSONModel (1.0.1)
   - libqrencode (3.4.2)
-  - MarqueeLabel (2.0.5)
+  - MarqueeLabel (2.0.8)
+  - RBStoryboardLink (0.1.0)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - JSONModel
   - libqrencode (~> 3.4.2)
   - MarqueeLabel (~> 2.0.5)
+  - RBStoryboardLink (~> 0.1.0)
   - SDWebImage (~> 3.7.1)
   - SVProgressHUD (~> 1.0)
 
@@ -40,8 +42,9 @@ SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
   libqrencode: ebfece8f6983de7a4a6d33c3a30e2910ecf43b7c
-  MarqueeLabel: 9a9f90f431640b70f010e949ce228391f3af3c61
+  MarqueeLabel: 80ff5069b2b8ccd8678b56af0d8ff08ce417d34c
+  RBStoryboardLink: 2abe4697a7dd6137482590b044f6e4f1c2b05837
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4

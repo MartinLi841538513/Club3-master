@@ -37,8 +37,9 @@
     NSString *gid = viewController.good.gid;
     NSString *urlString = [NSString stringWithFormat:KillCountDownURL,mid,gid];
     [SVProgressHUD show];
+    NSLog(@"%@",urlString);
     KillCountDown *killCountDown = [[KillCountDown alloc] initFromURLWithString:urlString completion:^(KillCountDown *model,JSONModelError *error){
-        NSLog(@"%@",killCountDown);
+        NSLog(@"  %@",killCountDown);
         if (model.status!=2) {
             [SVProgressHUD showErrorWithStatus:@"时间加载出错，请退出重新加载"];
         }else{

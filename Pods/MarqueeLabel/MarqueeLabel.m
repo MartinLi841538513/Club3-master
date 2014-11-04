@@ -9,6 +9,9 @@
 NSString *const kMarqueeLabelControllerRestartNotification = @"MarqueeLabelViewControllerRestart";
 NSString *const kMarqueeLabelShouldLabelizeNotification = @"MarqueeLabelShouldLabelizeNotification";
 NSString *const kMarqueeLabelShouldAnimateNotification = @"MarqueeLabelShouldAnimateNotification";
+NSString *const kMarqueeLabelAnimationCompletionBlock = @"MarqueeLabelAnimationCompletionBlock";
+
+typedef void(^MLAnimationCompletionBlock)(BOOL finished);
 
 // Helpers
 @interface UIView (MarqueeLabelHelpers)
@@ -154,10 +157,11 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // We don't care about these values, we just want to forward them on to our sublabel.
     NSArray *properties = @[@"baselineAdjustment", @"enabled", @"highlighted", @"highlightedTextColor",
                             @"minimumFontSize", @"shadowOffset", @"textAlignment",
-                            @"userInteractionEnabled", @"text", @"adjustsFontSizeToFitWidth",
+                            @"userInteractionEnabled", @"adjustsFontSizeToFitWidth",
                             @"lineBreakMode", @"numberOfLines"];
     
     // Iterate through properties
+    self.subLabel.text = super.text;
     self.subLabel.font = super.font;
     self.subLabel.textColor = super.textColor;
     self.subLabel.backgroundColor = super.backgroundColor;
@@ -210,39 +214,6 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // UIApplication state notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartLabel) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shutdownLabel) name:UIApplicationDidEnterBackgroundNotification object:nil];
-    
-    // Device Orientation change handling
-    /* Necessary to prevent a "super-speed" scroll bug. When the frame is changed due to a flexible width autoresizing mask,
-     * the setFrame call occurs during the in-flight orientation rotation animation, and the scroll to the away location
-     * occurs at super speed. To work around this, the orientationWilLChange property is set to YES when the notification
-     * UIApplicationWillChangeStatusBarOrientationNotification is posted, and a notification handler block listening for
-     * the UIViewAnimationDidStopNotification notification is added. The handler block checks the notification userInfo to
-     * see if the delegate of the ending animation is the UIWindow of the label. If so, the rotation animation has finished
-     * and the label can be restarted, and the notification observer removed.
-     */
-    
-    __weak __typeof(&*self)weakSelf = self;
-    
-    __block id animationObserver = nil;
-    self.orientationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillChangeStatusBarOrientationNotification
-                                                                                 object:nil
-                                                                                  queue:nil
-                                                                             usingBlock:^(NSNotification *notification){
-                                                                                 weakSelf.orientationWillChange = YES;
-                                                                                 [weakSelf returnLabelToOriginImmediately];
-                                                                                 animationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"UIViewAnimationDidStopNotification"
-                                                                                                                                                       object:nil
-                                                                                                                                                        queue:nil
-                                                                                                                                                   usingBlock:^(NSNotification *notification){
-                                                                                                                                                       if ([notification.userInfo objectForKey:@"delegate"] == weakSelf.window) {
-                                                                                                                                                           weakSelf.orientationWillChange = NO;
-                                                                                                                                                           [weakSelf restartLabel];
-                                                                                                                                                           
-                                                                                                                                                           // Remove notification observer
-                                                                                                                                                           [[NSNotificationCenter defaultCenter] removeObserver:animationObserver];
-                                                                                                                                                       }
-                                                                                                                                                   }];
-                                                                             }];
 }
 
 - (void)observedViewControllerChange:(NSNotification *)notification {
@@ -267,7 +238,6 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
         }
         CGSize minimumLabelSize = [self subLabelSize];
         
-        
         // Adjust for fade length
         CGSize minimumSize = CGSizeMake(minimumLabelSize.width + (self.fadeLength * 2), minimumLabelSize.height);
         
@@ -289,7 +259,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 {
     [super layoutSubviews];
     
-    [self updateSublabelAndLocationsAndBeginScroll:!self.orientationWillChange];
+    [self updateSublabelAndLocationsAndBeginScroll:YES];
 }
 
 - (void)willMoveToWindow:(UIWindow *)newWindow {
@@ -468,12 +438,9 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     CGSize expectedLabelSize = CGSizeZero;
     CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
     
-    // Calculate based on attributed text
-    expectedLabelSize = [self.subLabel.attributedText boundingRectWithSize:maximumLabelSize
-                                                                   options:0
-                                                                   context:nil].size;
-    
-    expectedLabelSize.width = ceilf(expectedLabelSize.width);
+    // Get size of subLabel
+    expectedLabelSize = [self.subLabel sizeThatFits:maximumLabelSize];
+    // Adjust to own height (make text baseline match normal label)
     expectedLabelSize.height = self.bounds.size.height;
     
     return expectedLabelSize;
@@ -512,13 +479,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     if (!viewController.isViewLoaded) {
         return NO;
     }
-    // Check if application is in active state
-    // Prevents CATransaction completionBlock (which does not receive a "finished" parameter
-    // like UIView animations) from looping when the application has been backgrounded
-    if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive) {
-        return NO;
-    }
-
+    
     return YES;
 }
 
@@ -583,8 +544,11 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
         [self.layer.mask addAnimation:gradAnim forKey:@"gradient"];
     }
     
-    // Set completion block, after adding gradient animation (so that gradient animation does not affect completion)
-    [CATransaction setCompletionBlock:^{
+    MLAnimationCompletionBlock completionBlock = ^(BOOL finished) {
+        if (!finished) {
+            // Do not continue into the next loop
+            return;
+        }
         // Call returned home method
         [self labelReturnedToHome:YES];
         // Check to ensure that:
@@ -598,7 +562,8 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
                 [self scrollAwayWithInterval:interval delayAmount:delayAmount];
             }
         }
-    }];
+    };
+    
 
     // Create animation for position
     NSArray *values = @[[NSValue valueWithCGPoint:self.homeLabelFrame.origin],      // Initial location, home
@@ -611,6 +576,10 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
                                                                 values:values
                                                               interval:interval
                                                                  delay:delayAmount];
+    // Add completion block
+    [awayAnim setValue:completionBlock forKey:kMarqueeLabelAnimationCompletionBlock];
+    
+    // Add animation
     [self.subLabel.layer addAnimation:awayAnim forKey:@"position"];
     
     [CATransaction commit];
@@ -643,8 +612,11 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
         [self.layer.mask addAnimation:gradAnim forKey:@"gradient"];
     }
     
-    // Set completion block, after adding gradient animation (so that gradient animation does not affect completion)
-    [CATransaction setCompletionBlock:^{
+    MLAnimationCompletionBlock completionBlock = ^(BOOL finished) {
+        if (!finished) {
+            // Do not continue into the next loop
+            return;
+        }
         // Call returned home method
         [self labelReturnedToHome:YES];
         // Check to ensure that:
@@ -658,7 +630,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
                 [self scrollContinuousWithInterval:interval after:delayAmount];
             }
         }
-    }];
+    };
     
     // Create animations for sublabel positions
     NSArray *labels = [self allSubLabels];
@@ -673,6 +645,12 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
                                                                     values:values
                                                                   interval:interval
                                                                      delay:delayAmount];
+        // Attach completion block to subLabel
+        if (sl == self.subLabel) {
+            [awayAnim setValue:completionBlock forKey:kMarqueeLabelAnimationCompletionBlock];
+        }
+        
+        // Add animation
         [sl.layer addAnimation:awayAnim forKey:@"position"];
         
         // Increment offset
@@ -899,6 +877,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     
     // Set values
     animation.values = values;
+    animation.delegate = self;
     
     return animation;
 }
@@ -926,6 +905,12 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     return [CAMediaTimingFunction functionWithName:timingFunction];
 }
 
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    MLAnimationCompletionBlock completionBlock = [anim valueForKey:kMarqueeLabelAnimationCompletionBlock];
+    if (completionBlock) {
+        completionBlock(flag);
+    }
+}
 
 #pragma mark - Label Control
 

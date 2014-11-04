@@ -38,8 +38,8 @@
     self.address.text = userModel.sname;
     
     self.QRImgView.image = [QRCodeGenerator qrImageForString:userModel.qrcode imageSize:self.QRImgView.frame.size.width];
-    [self.QRImgView layer].magnificationFilter = kCAFilterNearest;
-
+//    [self.QRImgView layer].magnificationFilter = kCAFilterNearest;
+    
     [self.userIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,userModel.picture]] placeholderImage:[UIImage imageNamed:@"userIcon.jpg"]];
 }
 -(void)viewDidAppear:(BOOL)animated{

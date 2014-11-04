@@ -126,8 +126,7 @@
  */
 -(void)pushToDetailViewControllerWithItem:(TradeOrder *)item onViewController:(MyOrderViewController *)myOrderViewController{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TradeOrderDetailViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"TradeOrderDetailViewController"];
+    TradeOrderDetailViewController *viewController = [myOrderViewController.storyboard instantiateViewControllerWithIdentifier:@"TradeOrderDetailViewController"];
     [myOrderViewController.navigationController pushViewController:viewController animated:YES];
     NSString *urlString = [NSString stringWithFormat:DetailTradeOrderURL,item.orderid];
     NSLog(@"%@",urlString);

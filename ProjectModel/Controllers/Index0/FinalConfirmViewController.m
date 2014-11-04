@@ -16,26 +16,12 @@
 @interface FinalConfirmViewController ()
 {
 
-    __weak IBOutlet UILabel *tableHeader;
     __weak IBOutlet UITableView *tableview;
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UILabel *totalPrice;
     __weak IBOutlet UILabel *bottomTotalPrice;
-    __weak IBOutlet UILabel *tips;
     __weak IBOutlet UIButton *submitButton;
-    __weak IBOutlet UILabel *sendMethodTitle;
-    
-    
-    __weak IBOutlet UIImageView *deliverRadio1;
-    __weak IBOutlet UIImageView *deliverRadio2;
-    
-    __weak IBOutlet UILabel *deliverRadioTitle1;
-    
-    __weak IBOutlet UILabel *deliverRadioTitle2;
-    __weak IBOutlet UILabel *storeInfo;
     __weak IBOutlet UIView *userInfo;
-    
-    
     
     NSString *identifier;
     NSArray *timeArray;
@@ -101,14 +87,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    tableview.frame = CGRectMake(0,StatusBarFrame.size.height+NavigationBarFrame.size.height + tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, (self.items.count+1)*34+50);
 
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    scrollView.contentSize = CGSizeMake(DeviceFrame.size.width, userInfo.frame.origin.y+userInfo.frame.size.height+140);
-    NSLog(@"%@",NSStringFromCGSize(scrollView.contentSize));
+//    scrollView.contentSize = CGSizeMake(DeviceFrame.size.width, userInfo.frame.origin.y+userInfo.frame.size.height+140);
 
 }
 - (void)didReceiveMemoryWarning
@@ -172,7 +156,8 @@
 //选择送货时间
 - (IBAction)selectTimeAction:(id)sender {
     
-    [finalConfirmService showTimePickerViewOnView:scrollView withFrame:CGRectMake(userInfo.frame.origin.x+self.sendTime.frame.origin.x, userInfo.frame.origin.y+self.sendTime.frame.origin.y, self.sendTime.frame.size.width,0) andDatas:timeArray onTarget:self withObject:(id)sender];
+    
+    [finalConfirmService showTimePickerViewOnView:scrollView withFrame:CGRectMake(userInfo.frame.origin.x+self.sendTime.frame.origin.x, self.thirdView.frame.origin.y + userInfo.frame.origin.y+self.sendTime.frame.origin.y, self.sendTime.frame.size.width,0) andDatas:timeArray onTarget:self withObject:(id)sender];
 }
 
 - (IBAction)submitAction:(id)sender {
